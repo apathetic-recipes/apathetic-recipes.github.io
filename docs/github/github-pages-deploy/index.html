@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Github Pages Deploy | Apathetic Recipes</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Github Pages Deploy" />
+<meta name="author" content="Apathetic Tools" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Notes and snippets from our elsewhere learnings." />
+<meta property="og:description" content="Notes and snippets from our elsewhere learnings." />
+<link rel="canonical" href="https://apathetic-recipes.github.io/docs/github/github-pages-deploy/" />
+<meta property="og:url" content="https://apathetic-recipes.github.io/docs/github/github-pages-deploy/" />
+<meta property="og:site_name" content="Apathetic Recipes" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Github Pages Deploy" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Apathetic Tools"},"description":"Notes and snippets from our elsewhere learnings.","headline":"Github Pages Deploy","url":"https://apathetic-recipes.github.io/docs/github/github-pages-deploy/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://apathetic-recipes.github.io/feed.xml" title="Apathetic Recipes" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Apathetic Recipes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/decisions-md/v1.html">DECISIONS.md Style</a><a class="page-link" href="/docs/astro-starlight/icons-by-category/assets/partials/pageFooter.partial.html">How to use built-in Icons</a><a class="page-link" href="/docs/astro-starlight/icons-by-category/assets/partials/pageHeader.partial.html">Starlight Icons by Category ✨</a><a class="page-link" href="/decisions-md/">DECISIONS.md Style</a><a class="page-link" href="/docs/">Apathetic Tools Snippet Documentation</a><a class="page-link" href="/docs/astro-starlight/">Starlight Snippets</a><a class="page-link" href="/docs/astro-starlight/icons-by-category/">Starlight Icons by Category ✨</a><a class="page-link" href="/docs/astro-starlight/sidebar-toggles/">Sidebar Toggles</a><a class="page-link" href="/docs/astro-starlight/theme-selector-firefox-windows-fix/">Theme Selector fix for Firefox on Windows</a><a class="page-link" href="/docs/astro-starlight/topics-astro-docs-theme/">Theming Starlight Sidebar Topics as Astro Docs</a><a class="page-link" href="/docs/astro/">Astro Snippets</a><a class="page-link" href="/docs/git/">Git Snippets</a><a class="page-link" href="/docs/git/per-repository-user/">Git – Per Repository User</a><a class="page-link" href="/docs/github/">Github Snippets</a><a class="page-link" href="/docs/github/github-pages-deploy/">Github Pages Deploy</a><a class="page-link" href="/docs/javascript/">Javascript Snippets</a><a class="page-link" href="/docs/javascript/config-pattern/">Config Pattern for Astro</a><a class="page-link" href="/docs/text/">Text Snippets</a><a class="page-link" href="/docs/text/utf8-emoji-icons-by-category/">UTF-8 Emoji Icons by Category</a><a class="page-link" href="/docs/windows/">Windows Snippets</a><a class="page-link" href="/docs/windows/development-setup/">Windows Development Setup</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Github Pages Deploy</h1>
+  </header>
+
+  <div class="post-content">
+    <h1 id="github-pages-deploy">Github Pages Deploy</h1>
+
+<p>Deploy from any repo to any repo or server using Github Pages and custom deploy tasks.</p>
+
+<p>This <a href="https://github.com/apathetic-tools/snippets">snippet</a> was created by 😐 <a href="https://github.com/apathetic-tools">Apathetic Tools</a> with thanks to <a href="https://github.com/peaceiris">peaceiris</a> for their GitHub action.<br />
+<sub>Guide licensed <a href="/LICENSE-CONTENT">CC BY-NC</a> · Code snippets <a href="/LICENSE">MIT</a></sub></p>
+
+<h2 id="setup-dummy-repos-for-testing">Setup dummy repos for testing</h2>
+
+<blockquote>
+  <p>[!IMPORTANT]<br />
+<strong>Strongly recommended:</strong> set up a dummy org/repos before attempting this on your production repos.<br />
+That way you can safely experiment, troubleshoot, and mirror your final configuration.</p>
+</blockquote>
+
+<p>Example setup:</p>
+<ul>
+  <li>Org: <code class="language-plaintext highlighter-rouge">&lt;someorg&gt;</code></li>
+  <li>Repos:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">website-files</code></li>
+      <li><code class="language-plaintext highlighter-rouge">someorg.github.io</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Notes:</p>
+<ul>
+  <li>For <code class="language-plaintext highlighter-rouge">someorg.github.io</code>, you may need to create a branch or trigger an action so it “wakes up”. Configure <strong>Pages</strong> under <code class="language-plaintext highlighter-rouge">Settings → Pages</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">website-files</code> does <em>not</em> need Pages enabled — just commit a dummy <code class="language-plaintext highlighter-rouge">dist/index.html</code> or <code class="language-plaintext highlighter-rouge">README.md</code> to test file copy and build triggers.</li>
+  <li>The goal: confirm files are copied and a build runs, not to build a full site yet.</li>
+</ul>
+
+<h2 id="deploy-within-a-single-repo">Deploy within a single repo</h2>
+
+<p>This is the most common scenario. It’s simple, well supported, and flexible.</p>
+
+<p>Options (from easiest to most customizable):</p>
+<ul>
+  <li><strong>GUI method</strong> — Configure under <code class="language-plaintext highlighter-rouge">Settings → Pages</code>. No keys or config files needed.</li>
+  <li><strong>Workflow method</strong> — Use a <code class="language-plaintext highlighter-rouge">.github/workflows/deploy.yml</code> with <code class="language-plaintext highlighter-rouge">GITHUB_TOKEN</code> and one of:
+    <ul>
+      <li>Framework-specific actions (e.g. <a href="https://docs.astro.build/en/guides/deploy/github/">Astro GitHub Pages</a>)</li>
+      <li><a href="https://github.com/marketplace/actions/deploy-github-pages-site">actions/deploy-pages</a></li>
+      <li><a href="https://github.com/marketplace/actions/github-pages-action">peaceiris/actions-gh-pages</a></li>
+      <li><a href="https://github.com/tschaub/gh-pages?tab=readme-ov-file#github-pages-project-sites">tschaub/gh-pages</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="deploy-across-repos-or-servers">Deploy across repos or servers</h2>
+
+<p>Why you might need this:</p>
+<ul>
+  <li>Source repo is private (unsupported by official methods on some accounts).</li>
+  <li>You want to use <code class="language-plaintext highlighter-rouge">&lt;org&gt;.github.io</code> but keep your code in a different repo (avoids renaming repos later if you switch to a custom domain).</li>
+  <li>You need to push to another server or service.</li>
+</ul>
+
+<blockquote>
+  <p>[!NOTE]
+Official actions don’t support this at most account levels.</p>
+</blockquote>
+
+<p>Instead, use <strong>SSH authentication</strong> (<em>not</em> personal access tokens).</p>
+
+<p>Options (from easiest to hardest):</p>
+<ul>
+  <li><a href="https://github.com/marketplace/actions/github-pages-action">peaceiris/actions-gh-pages</a> with SSH keys ✅ (recommended)</li>
+  <li><a href="https://github.com/tschaub/gh-pages">tschaub/gh-pages</a> + <a href="https://github.com/marketplace/actions/webfactory-ssh-agent">webfactory/ssh-agent</a></li>
+  <li><a href="https://github.com/tschaub/gh-pages">tschaub/gh-pages</a> + manual SSH config ❌ (not recommended, brittle and error-prone)</li>
+</ul>
+
+<p>We haven’t researched if/how to do this with Github Apps, but it is not required at this time.</p>
+
+<hr />
+
+<h3 id="generating-ssh-keys-required">Generating SSH keys (required)</h3>
+
+<p>All cross-repo/server methods require SSH keys.</p>
+
+<p><strong>Best practices:</strong></p>
+<ul>
+  <li>Generate fresh keys for this purpose only.</li>
+  <li>Do <em>not</em> reuse existing SSH keys.</li>
+  <li>Do <em>not</em> associate them with your GitHub account.</li>
+  <li>Do <em>not</em> use Personal Access Tokens (they expire).</li>
+</ul>
+
+<h4 id="step-1--create-key-pair">Step 1 — Create key pair</h4>
+
+<p>No passphrase (GitHub Secrets cannot handle prompts):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-keygen <span class="nt">-t</span> ed25519 <span class="nt">-a</span> 100 <span class="nt">-f</span> path/to/keyfile <span class="nt">-N</span> <span class="s2">""</span> <span class="nt">-C</span> <span class="s2">"github-actions"</span>
+</code></pre></div></div>
+
+<p>For older servers (not GitHub) that don’t support Ed25519:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-keygen <span class="nt">-t</span> rsa <span class="nt">-b</span> 4096 <span class="nt">-o</span> <span class="nt">-f</span> path/to/keyfile <span class="nt">-N</span> <span class="s2">""</span> <span class="nt">-C</span> <span class="s2">"github-actions"</span>
+</code></pre></div></div>
+
+<p>Output:</p>
+<ul>
+  <li>Private key: <keyfile></keyfile></li>
+  <li>Public key: <keyfile>.pub</keyfile></li>
+</ul>
+
+<p>If the private key contents doesn’t say <code class="language-plaintext highlighter-rouge">BEGIN OPENSSH PRIVATE KEY</code>, back it up and convert:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-keygen <span class="nt">-p</span> <span class="nt">-f</span> path/to/your/key <span class="nt">-m</span> pem
+</code></pre></div></div>
+
+<h4 id="step-2--add-private-key-as-github-secret">Step 2 — Add private key as GitHub secret</h4>
+
+<p>Environment secrets are safer than repo/org secrets as they be explicitly requested by deploy actions.</p>
+
+<p>In source repo:</p>
+<ol>
+  <li>Go to <code class="language-plaintext highlighter-rouge">Settings → Environments → github-pages → Environment secrets</code>.</li>
+  <li>Add secret:
+    <ul>
+      <li>Name: <code class="language-plaintext highlighter-rouge">ACTIONS_DEPLOY_KEY</code></li>
+      <li>Value: contents of <code class="language-plaintext highlighter-rouge">&lt;keyfile&gt;</code> (not .pub)</li>
+    </ul>
+  </li>
+  <li>Save.</li>
+</ol>
+
+<blockquote>
+  <p>ℹ️ Ensure the file ends with a newline and uses Linux <strong>LF</strong> line endings.</p>
+</blockquote>
+
+<h4 id="step-3--add-public-key-as-deploy-key">Step 3 — Add public key as deploy key</h4>
+
+<p>In destination repo (if on GitHub):</p>
+<ol>
+  <li>Go to <code class="language-plaintext highlighter-rouge">Settings → Security → Deploy keys</code>.</li>
+  <li>Add new key:
+    <ul>
+      <li>Value: contents of <code class="language-plaintext highlighter-rouge">&lt;keyfile&gt;.pub</code></li>
+      <li>Enable: <strong>Write access</strong></li>
+    </ul>
+  </li>
+</ol>
+
+<p>For non-GitHub servers or services: add the public key to the server’s SSH access config. We unfortunately can’t provide instruction for every service.</p>
+
+<p>✅ At this point you have valid SSH keys, and they are configured. Test them in a dummy environment before production.</p>
+
+<hr />
+
+<h3 id="example-using-peaceirisactions-gh-pages-with-ssh-recommended">Example: Using peaceiris/actions-gh-pages with SSH (recommended)</h3>
+
+<p>Documentation:</p>
+<ul>
+  <li><a href="https://github.com/marketplace/actions/github-pages-action">peaceiris/actions-gh-pages</a> with SSH keys</li>
+</ul>
+
+<p><strong>Pros:</strong></p>
+<ul>
+  <li>Single action that does everything (checkout → commit → push)</li>
+  <li>GitHub Actions–native: built-in support for deploy_key, external_repository, Jekyll toggle, etc.</li>
+  <li>Fewer moving parts → less chance of config errors</li>
+  <li>Great default behavior for common GitHub Pages use cases</li>
+</ul>
+
+<p><strong>Cons:</strong></p>
+<ul>
+  <li>Opinionated defaults — less flexible if you need unusual workflows</li>
+  <li>GitHub Actions only (not portable to other CI/CD)</li>
+</ul>
+
+<p>Here’s an example working <code class="language-plaintext highlighter-rouge">.github/workflows/deploy.yml</code>:</p>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Deploy across repos or servers using peaceiris/actions-gh-pages over SSH</span>
+<span class="c1"># Deploy inspired by Apathetic Tools · MIT</span>
+<span class="c1"># https://github.com/apathetic-tools/snippets/blob/main/docs/github/github-pages-deploy</span>
+<span class="c1"># See also: https://github.com/marketplace/actions/github-pages-action</span>
+
+<span class="na">name</span><span class="pi">:</span> <span class="s">Deploy to GitHub Pages</span>
+
+<span class="na">on</span><span class="pi">:</span>
+  <span class="c1"># Runs on pushes targeting the default branch</span>
+  <span class="na">push</span><span class="pi">:</span>
+    <span class="na">branches</span><span class="pi">:</span> <span class="pi">[</span> <span class="nv">main</span> <span class="pi">]</span>
+  
+  <span class="c1"># Allows you to run this workflow manually from the Actions tab</span>
+  <span class="na">workflow_dispatch</span><span class="pi">:</span>
+
+<span class="c1"># Allow this job to clone the repo and create a page deployment</span>
+<span class="c1"># We only need read because ssh deploy key will have the write at the destination.</span>
+<span class="c1"># If using `actions/deploy-pages` and `GITHUB_TOKEN`  to deploy to branch on the same repo you need write.</span>
+<span class="na">permissions</span><span class="pi">:</span>
+  <span class="na">contents</span><span class="pi">:</span> <span class="s">read</span> 
+  <span class="c1"># pages: write # since we are ssh pushing, don't need this</span>
+  <span class="c1"># id-token: write # since we are ssh pushing, don't need this</span>
+
+<span class="c1"># Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.</span>
+<span class="c1"># However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.</span>
+<span class="na">concurrency</span><span class="pi">:</span>
+  <span class="na">group</span><span class="pi">:</span> <span class="s2">"</span><span class="s">pages"</span>
+  <span class="na">cancel-in-progress</span><span class="pi">:</span> <span class="no">false</span>
+
+<span class="na">jobs</span><span class="pi">:</span>
+  <span class="c1"># Single deploy job since we're just deploying</span>
+  <span class="na">deploy</span><span class="pi">:</span>
+    <span class="na">runs-on</span><span class="pi">:</span> <span class="s">ubuntu-latest</span>    
+    <span class="c1"># If you stored the secret in the environment</span>
+    <span class="na">environment</span><span class="pi">:</span> <span class="s">github-pages</span>
+    <span class="na">steps</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Checkout your repository using git</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">actions/checkout@v4</span>
+
+      <span class="c1"># - name: Build site</span>
+      <span class="c1">#   run: pnpm run build</span>
+          
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Deploy to GitHub Pages</span>
+        <span class="na">id</span><span class="pi">:</span> <span class="s">deployment</span>
+        <span class="na">uses</span><span class="pi">:</span> <span class="s">peaceiris/actions-gh-pages@v4</span>
+        <span class="na">with</span><span class="pi">:</span>
+          <span class="na">deploy_key</span><span class="pi">:</span> <span class="s">$</span>
+          <span class="na">publish_branch</span><span class="pi">:</span> <span class="s">gh-pages</span>
+          <span class="na">publish_dir</span><span class="pi">:</span> <span class="s">./dist</span>
+          <span class="na">enable_jekyll</span><span class="pi">:</span> <span class="no">true</span> <span class="c1"># false if using index.html</span>
+          <span class="na">external_repository</span><span class="pi">:</span> <span class="s">&lt;user/org&gt;/&lt;deployment repo&gt;</span>
+        <span class="na">if</span><span class="pi">:</span> <span class="s">$</span> <span class="c1"># only deploy if main branch changed</span>
+</code></pre></div></div>
+
+<p>In production you will likely want to make a separate build job, then run deploy.</p>
+
+<hr />
+
+<h4 id="alternative-tschaubgh-pages--webfactoryssh-agent">Alternative: tschaub/gh-pages + webfactory/ssh-agent</h4>
+
+<p>Documentation:</p>
+<ul>
+  <li><a href="https://github.com/tschaub/gh-pages?tab=readme-ov-file#github-pages-project-sites">tschaub/gh-pages</a></li>
+  <li><a href="https://github.com/marketplace/actions/webfactory-ssh-agent">webfactory/ssh-agent</a></li>
+</ul>
+
+<p><strong>Pros:</strong></p>
+<ul>
+  <li>CLI tool that can run anywhere (local scripts, other CI/CD, not just GitHub Actions)</li>
+  <li>More granular control over deployment flow (what to publish, when, and how)</li>
+  <li>Long track record outside of Actions</li>
+</ul>
+
+<p><strong>Cons:</strong></p>
+<ul>
+  <li>Requires stitching multiple 3rd-party actions together</li>
+  <li>More moving parts → more opportunities for configuration and debugging headaches</li>
+  <li>Steeper learning curve than peaceiris</li>
+</ul>
+
+<p>See our <a href="/docs/github/github-pages-deploy/assets/examples/deploy-tschaub-webfactory.yml">example working workflow</a>.</p>
+
+<p>There is some troubleshooting steps in there to help you as you get things working. You can safely remove them once you have everything working.</p>
+
+<hr />
+
+<h4 id="alternative-tschaubgh-pages--manual-ssh-configuration-not-recommended">Alternative: tschaub/gh-pages + manual SSH configuration (Not Recommended)</h4>
+
+<blockquote>
+  <p>[!WARNING]
+We cannot recommend this approach. Use only if you have a very specific reason and are prepared for extensive troubleshooting.</p>
+</blockquote>
+
+<p>Documentation:</p>
+<ul>
+  <li><a href="https://github.com/tschaub/gh-pages?tab=readme-ov-file#github-pages-project-sites">tschaub/gh-pages</a></li>
+  <li><a href="https://maxschmitt.me/posts/github-actions-ssh-key">Max Schmitt Github Actions SSH Key blog post</a> by Max Schmitt</li>
+</ul>
+
+<p><strong>Pros:</strong></p>
+<ul>
+  <li>Maximum control — no reliance on 3rd-party actions to manage SSH</li>
+  <li>Does not handoff SSH keys to 3rd party actions or programs</li>
+  <li>Useful if you want to understand the internals of how deploys work</li>
+  <li>Alternative to <em>webfactory/ssh-agent</em></li>
+</ul>
+
+<p><strong>Cons:</strong></p>
+<ul>
+  <li>Very brittle and error-prone in GitHub Actions</li>
+  <li>Difficult to get SSH agent working reliably (<code class="language-plaintext highlighter-rouge">$SSH_AUTH_SOCK</code> issues, agent propagation)</li>
+  <li>No working example in this guide — we couldn’t get it stable despite extensive attempts</li>
+</ul>
+
+<p>In our attempts, <code class="language-plaintext highlighter-rouge">$SSH_AUTH_SOCK</code> never propagated correctly. The blog post uses <code class="language-plaintext highlighter-rouge">SSH_AUTH_SOCK: /tmp/ssh_agent.sock</code> and <code class="language-plaintext highlighter-rouge">ssh-agent -a $SSH_AUTH_SOCK</code> so you may have more luck going back to that.</p>
+
+<p>Nevertheless, see our <a href="/docs/github/github-pages-deploy/assets/examples/deploy-tschaub-manual.yml">broken example draft workflow</a> to get you started.</p>
+
+<p>If you figure it out please let us know.</p>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<p>We can’t offer case-by-case debugging, but:</p>
+<ul>
+  <li>Dummy repos are your best friend.</li>
+  <li>Errors are usually due to secrets formatting (newlines, LF/CRLF issues) or SSH agent setup.</li>
+  <li>Don’t hesitate to ask a search engine or AI assistant for error-specific troubleshooting.</li>
+</ul>
+
+<p>✅ With this, you can deploy Github Pages from any repo to any repo or server.</p>
+
+<hr />
+
+<p><strong>📚 Inspiration and Sources</strong></p>
+<ul>
+  <li><a href="https://docs.github.com/en/pages">GitHub Pages docs</a></li>
+  <li><a href="https://github.com/marketplace/actions/deploy-github-pages-site">actions/deploy-pages</a></li>
+  <li><a href="https://docs.astro.build/en/guides/deploy/github/">Astro Github Pages deploy guide</a></li>
+  <li><a href="https://github.com/marketplace/actions/github-pages-action">peaceiris/actions-gh-pages</a></li>
+  <li><a href="https://github.com/tschaub/gh-pages?tab=readme-ov-file#github-pages-project-sites">tschaub/gh-page</a></li>
+  <li><a href="https://github.com/marketplace/actions/webfactory-ssh-agent">webfactory/ssh-agent</a></li>
+  <li><a href="https://github.com/orgs/community/discussions/42772#discussioncomment-14360018">Github Community discussion #42772</a></li>
+  <li><a href="https://maxschmitt.me/posts/github-actions-ssh-key">Max Schmitt: Github Actions SSH Key</a></li>
+</ul>
+
+<p>✨ <em>AI was used to help draft language, formatting, and code — plus we just love em dashes.</em></p>
+
+<p align="center">
+  <sub>😐 <a href="https://github.com/apathetic-tools">Apathetic Tools</a> © 
+  Guide <a href="../../../LICENSE-CONTENT">CC&nbsp;BY-NC</a> · 
+  Code <a href="../../../LICENSE">MIT</a></sub>
+</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Apathetic Recipes</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Apathetic Tools</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Notes and snippets from our elsewhere learnings.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

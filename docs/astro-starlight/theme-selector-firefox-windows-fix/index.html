@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Theme Selector fix for Firefox on Windows | Apathetic Recipes</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Theme Selector fix for Firefox on Windows" />
+<meta name="author" content="Apathetic Tools" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Notes and snippets from our elsewhere learnings." />
+<meta property="og:description" content="Notes and snippets from our elsewhere learnings." />
+<link rel="canonical" href="https://apathetic-recipes.github.io/docs/astro-starlight/theme-selector-firefox-windows-fix/" />
+<meta property="og:url" content="https://apathetic-recipes.github.io/docs/astro-starlight/theme-selector-firefox-windows-fix/" />
+<meta property="og:site_name" content="Apathetic Recipes" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Theme Selector fix for Firefox on Windows" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Apathetic Tools"},"description":"Notes and snippets from our elsewhere learnings.","headline":"Theme Selector fix for Firefox on Windows","url":"https://apathetic-recipes.github.io/docs/astro-starlight/theme-selector-firefox-windows-fix/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://apathetic-recipes.github.io/feed.xml" title="Apathetic Recipes" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Apathetic Recipes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/decisions-md/v1.html">DECISIONS.md Style</a><a class="page-link" href="/docs/astro-starlight/icons-by-category/assets/partials/pageFooter.partial.html">How to use built-in Icons</a><a class="page-link" href="/docs/astro-starlight/icons-by-category/assets/partials/pageHeader.partial.html">Starlight Icons by Category ✨</a><a class="page-link" href="/decisions-md/">DECISIONS.md Style</a><a class="page-link" href="/docs/">Apathetic Tools Snippet Documentation</a><a class="page-link" href="/docs/astro-starlight/">Starlight Snippets</a><a class="page-link" href="/docs/astro-starlight/icons-by-category/">Starlight Icons by Category ✨</a><a class="page-link" href="/docs/astro-starlight/sidebar-toggles/">Sidebar Toggles</a><a class="page-link" href="/docs/astro-starlight/theme-selector-firefox-windows-fix/">Theme Selector fix for Firefox on Windows</a><a class="page-link" href="/docs/astro-starlight/topics-astro-docs-theme/">Theming Starlight Sidebar Topics as Astro Docs</a><a class="page-link" href="/docs/astro/">Astro Snippets</a><a class="page-link" href="/docs/git/">Git Snippets</a><a class="page-link" href="/docs/git/per-repository-user/">Git – Per Repository User</a><a class="page-link" href="/docs/github/">Github Snippets</a><a class="page-link" href="/docs/github/github-pages-deploy/">Github Pages Deploy</a><a class="page-link" href="/docs/javascript/">Javascript Snippets</a><a class="page-link" href="/docs/javascript/config-pattern/">Config Pattern for Astro</a><a class="page-link" href="/docs/text/">Text Snippets</a><a class="page-link" href="/docs/text/utf8-emoji-icons-by-category/">UTF-8 Emoji Icons by Category</a><a class="page-link" href="/docs/windows/">Windows Snippets</a><a class="page-link" href="/docs/windows/development-setup/">Windows Development Setup</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Theme Selector fix for Firefox on Windows</h1>
+  </header>
+
+  <div class="post-content">
+    <h1 id="theme-selector-fix-for-firefox-on-windows">Theme Selector fix for Firefox on Windows</h1>
+
+<p>Fix theme selector menu rendering issues in <strong>Firefox on Windows</strong> when using dark mode with <a href="https://starlight.astro.build/">Starlight</a>.</p>
+
+<p>This <a href="https://github.com/apathetic-tools/snippets">snippet</a> was created by 😐 <a href="https://github.com/apathetic-tools">Apathetic Tools</a>.<br />
+<sub>Guide licensed <a href="/LICENSE-CONTENT">CC BY-NC</a> · Code snippets <a href="/LICENSE">MIT</a></sub></p>
+
+<h2 id="problem">Problem</h2>
+
+<p>In Firefox on Windows, the default Starlight theme has a bug in dark mode:</p>
+
+<ul>
+  <li>The theme selector <code class="language-plaintext highlighter-rouge">&lt;select&gt;</code> menu has a <strong>white background</strong>.</li>
+  <li>Checked and hover states render with <strong>white text on white background</strong>, making them illegible.</li>
+</ul>
+
+<p>You can observe the issue on sites such as the <a href="https://docs.astro.build/">official Astro Docs site</a> or the <a href="https://astro.new/latest/preview/starlight-basics/">Starlight preview site</a>, though behavior may vary depending on your setup.</p>
+
+<p>On Firefox on Windows, if the problem is occurring, it should look something like:</p>
+
+<p><img src="/docs/astro-starlight/theme-selector-firefox-windows-fix/assets/theme-selector-bad-colors.png" alt="**Before** fix: white text on white background in theme selector" /></p>
+
+<h2 id="upstream-references">Upstream References</h2>
+<ul>
+  <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1810958">Firefox bug #1810958</a></li>
+  <li><a href="https://github.com/withastro/starlight/discussions/3180">Starlight discussion #3180</a></li>
+  <li><a href="https://github.com/withastro/starlight/issues/3426">Starlight issue #3426</a></li>
+</ul>
+
+<h2 id="workaround">Workaround</h2>
+
+<blockquote>
+  <p>[!TIP]
+Apply this workaround only if you need it immediately. The Firefox team may fix <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1810958">this problem</a> (+2y open), or Starlight team may provide an official workaround in the future — follow the <a href="https://github.com/withastro/starlight/discussions/3180">discussion #3180</a> for updates.</p>
+</blockquote>
+
+<ol>
+  <li>Add a <code class="language-plaintext highlighter-rouge">customCss</code> key to your Starlight integration in <code class="language-plaintext highlighter-rouge">astro.config.mjs</code> (<code class="language-plaintext highlighter-rouge">.ts</code>, etc.) if you don’t already have one:</li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">defineConfig</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">astro/config</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">starlight</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@astrojs/starlight</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">defineConfig</span><span class="p">({</span>
+  <span class="na">integrations</span><span class="p">:</span> <span class="p">[</span>
+    <span class="nx">starlight</span><span class="p">({</span>
+      <span class="na">customCss</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./src/styles/global.css</span><span class="dl">'</span><span class="p">],</span>
+    <span class="p">}),</span>
+  <span class="p">],</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Import a new <code class="language-plaintext highlighter-rouge">theme-menu-layer.css</code> file in your <code class="language-plaintext highlighter-rouge">global.css</code>.</li>
+</ol>
+
+<p>If using <a href="https://docs.astro.build/en/guides/styling/#tailwind">Tailwind</a>, adjust your <code class="language-plaintext highlighter-rouge">src/styles/global.css</code> like this:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* Insert `our-theme-menu` after `starlight` and before `theme` in your own layer list */</span>
+<span class="k">@layer</span> <span class="n">base</span><span class="p">,</span> <span class="n">starlight</span><span class="p">,</span> <span class="n">our-theme-menu</span><span class="p">,</span> <span class="n">theme</span><span class="p">,</span> <span class="n">components</span><span class="p">,</span> <span class="n">utilities</span><span class="p">;</span>
+
+<span class="k">@import</span> <span class="s2">'@astrojs/starlight-tailwind'</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s2">'tailwindcss/theme.css'</span> <span class="n">layer</span><span class="p">(</span><span class="n">theme</span><span class="p">);</span>
+<span class="k">@import</span> <span class="s2">'tailwindcss/utilities.css'</span> <span class="n">layer</span><span class="p">(</span><span class="n">utilities</span><span class="p">);</span>
+
+<span class="c">/* Import our theme fix */</span>
+<span class="k">@import</span> <span class="s2">'./theme-menu-layer.css'</span> <span class="n">layer</span><span class="p">(</span><span class="n">our-theme-menu</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>If you don’t use Tailwind, simply import <code class="language-plaintext highlighter-rouge">./theme-menu-layer.css</code> from your <code class="language-plaintext highlighter-rouge">global.css</code> stylesheet.</p>
+
+<ol>
+  <li>Create the workaround CSS at <code class="language-plaintext highlighter-rouge">src/styles/theme-menu-layer.css</code>:
+<code class="language-plaintext highlighter-rouge">src/styles/theme-menu-layer.css</code>
+```css
+/*
+    <ul>
+      <li>Fix: Dark mode theme selector menu in Firefox on Windows. Inspired by Apathetic Tools · MIT</li>
+      <li>https://github.com/apathetic-tools/snippets/blob/main/docs/astro-starlight/theme-selector-firefox-windows-fix</li>
+      <li>Ref: https://github.com/withastro/starlight/blob/main/packages/starlight/components/ThemeSelect.astro
+ */
+@layer our-theme-menu;</li>
+    </ul>
+  </li>
+</ol>
+
+<p>[data-theme=’dark’] starlight-theme-select {
+	&amp; select,
+	&amp; select option,
+	&amp; select option:checked {
+		background-color: var(–sl-color-gray-6);
+		color: var(–sl-color-text);
+	}</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&amp; select option:hover {
+	background-color: var(--sl-color-accent-high);
+	color: var(--sl-color-text-invert);
+} } ```
+</code></pre></div></div>
+
+<p>⚠️ Test across multiple browsers, screen widths, and themes to ensure consistency with your color palette.</p>
+
+<p>On Firefox on Windows, the fix should now look something like:</p>
+
+<p><img src="/docs/astro-starlight/theme-selector-firefox-windows-fix/assets/theme-selector-fixed-colors.png" alt="**After** fix: dark background with readable text in theme selector" /></p>
+
+<h2 id="optional-restrict-fix-to-firefox-only">Optional: Restrict Fix to Firefox Only</h2>
+
+<blockquote>
+  <p>[!WARNING]<br />
+Targeting Firefox or Windows only is non-standard and may break whenever Firefox updates.</p>
+</blockquote>
+
+<p>To restrict the fix to Firefox on Windows (more brittle), wrap the rules:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">@-moz-document</span> <span class="n">url-prefix</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">@media</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">-moz-platform</span><span class="p">:</span> <span class="n">windows</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c">/* Insert the theme menu fix here */</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>✅ With this applied, the theme selector will be legible again in Firefox on Windows dark mode.</p>
+
+<p><strong>📚 References and Credits</strong></p>
+
+<ul>
+  <li><a href="https://github.com/withastro/starlight/blob/main/packages/starlight/components/ThemeSelect.astro">Starlight · ThemeSelect.astro</a></li>
+  <li><a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1810958">Firefox bug #1810958</a></li>
+  <li><a href="https://github.com/withastro/starlight/issues/3426">Starlight issue #3426</a></li>
+  <li><a href="https://github.com/withastro/starlight/discussions/3180">Starlight discussion #3180</a></li>
+</ul>
+
+<blockquote>
+  <p>✨ <em>AI was used to help draft language, formatting, and code — plus we just love em dashes.</em></p>
+</blockquote>
+
+<p align="center">
+  <sub>😐 <a href="https://github.com/apathetic-tools">Apathetic Tools</a> © 
+  Guide <a href="../../../LICENSE-CONTENT">CC&nbsp;BY-NC</a> · 
+  Code <a href="../../../LICENSE">MIT</a></sub>
+</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Apathetic Recipes</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Apathetic Tools</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Notes and snippets from our elsewhere learnings.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

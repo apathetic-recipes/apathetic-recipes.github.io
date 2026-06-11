@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Config Pattern for Astro | Apathetic Recipes</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Config Pattern for Astro" />
+<meta name="author" content="Apathetic Tools" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Notes and snippets from our elsewhere learnings." />
+<meta property="og:description" content="Notes and snippets from our elsewhere learnings." />
+<link rel="canonical" href="https://apathetic-recipes.github.io/docs/javascript/config-pattern/" />
+<meta property="og:url" content="https://apathetic-recipes.github.io/docs/javascript/config-pattern/" />
+<meta property="og:site_name" content="Apathetic Recipes" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Config Pattern for Astro" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Apathetic Tools"},"description":"Notes and snippets from our elsewhere learnings.","headline":"Config Pattern for Astro","url":"https://apathetic-recipes.github.io/docs/javascript/config-pattern/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://apathetic-recipes.github.io/feed.xml" title="Apathetic Recipes" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Apathetic Recipes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/decisions-md/v1.html">DECISIONS.md Style</a><a class="page-link" href="/docs/astro-starlight/icons-by-category/assets/partials/pageFooter.partial.html">How to use built-in Icons</a><a class="page-link" href="/docs/astro-starlight/icons-by-category/assets/partials/pageHeader.partial.html">Starlight Icons by Category ✨</a><a class="page-link" href="/decisions-md/">DECISIONS.md Style</a><a class="page-link" href="/docs/">Apathetic Tools Snippet Documentation</a><a class="page-link" href="/docs/astro-starlight/">Starlight Snippets</a><a class="page-link" href="/docs/astro-starlight/icons-by-category/">Starlight Icons by Category ✨</a><a class="page-link" href="/docs/astro-starlight/sidebar-toggles/">Sidebar Toggles</a><a class="page-link" href="/docs/astro-starlight/theme-selector-firefox-windows-fix/">Theme Selector fix for Firefox on Windows</a><a class="page-link" href="/docs/astro-starlight/topics-astro-docs-theme/">Theming Starlight Sidebar Topics as Astro Docs</a><a class="page-link" href="/docs/astro/">Astro Snippets</a><a class="page-link" href="/docs/git/">Git Snippets</a><a class="page-link" href="/docs/git/per-repository-user/">Git – Per Repository User</a><a class="page-link" href="/docs/github/">Github Snippets</a><a class="page-link" href="/docs/github/github-pages-deploy/">Github Pages Deploy</a><a class="page-link" href="/docs/javascript/">Javascript Snippets</a><a class="page-link" href="/docs/javascript/config-pattern/">Config Pattern for Astro</a><a class="page-link" href="/docs/text/">Text Snippets</a><a class="page-link" href="/docs/text/utf8-emoji-icons-by-category/">UTF-8 Emoji Icons by Category</a><a class="page-link" href="/docs/windows/">Windows Snippets</a><a class="page-link" href="/docs/windows/development-setup/">Windows Development Setup</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Config Pattern for Astro</h1>
+  </header>
+
+  <div class="post-content">
+    <h1 id="config-pattern-for-astro">Config Pattern for Astro</h1>
+
+<p>Organize your <a href="https://astro.build/">Astro</a> (or other framework) configuration files into a <code class="language-plaintext highlighter-rouge">config/</code> folder for cleaner diffs, easier readability, and better project structure.</p>
+
+<p>This <a href="https://github.com/apathetic-tools/snippets">snippet</a> was created by 😐 <a href="https://github.com/apathetic-tools">Apathetic Tools</a> with thanks to <a href="https://github.com/withastro/docs">Astro Docs</a> for their example.<br />
+<sub>Guide licensed <a href="/LICENSE-CONTENT">CC BY-NC</a> · Code snippets <a href="/LICENSE">MIT</a></sub></p>
+
+<h2 id="why-use-this-pattern">Why Use This Pattern?</h2>
+
+<p>One of the main advantages is improved <strong>diff readability</strong>. By segmenting configuration into separate section files, diffs clearly apply only to those areas. It also makes it obvious when someone is modifying:</p>
+
+<ul>
+  <li>Meta information about the project</li>
+  <li>Framework integration or “glue” logic</li>
+</ul>
+
+<p>This structure reduces errors and simplifies collaboration.</p>
+
+<h2 id="setup">Setup</h2>
+
+<ol>
+  <li><strong>Create a <code class="language-plaintext highlighter-rouge">config/</code> folder</strong> in your project. Common section examples from a hypothetical project include:</li>
+</ol>
+
+<p><code class="language-plaintext highlighter-rouge">config/header.ts</code></p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Sometimes we need a unilingual site name for when i18n is not available</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">siteName</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">My Awesome Astro Site</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// Site title shown in the tab name and title bar (may contain more than just the name)</span>
+<span class="c1">// Ref: https://starlight.astro.build/reference/configuration/#title-required</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">title</span> <span class="o">=</span> <span class="p">{</span>
+	<span class="na">en</span><span class="p">:</span> <span class="dl">'</span><span class="s1">My Awesome Astro Site</span><span class="dl">'</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="c1">// Ref: https://starlight.astro.build/reference/configuration/#logo</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">logo</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="c1">// Meta description for search engines (combined string for all languages, usually unilingual)</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">description</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">A wonderful site about neat things.</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">config/hosting.ts</code></p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">/// Repository edit links</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">APP_USER</span> <span class="o">??</span> <span class="dl">'</span><span class="s1">my-username</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">repo</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">APP_REPO</span> <span class="o">??</span> <span class="dl">'</span><span class="s1">my-astro-site</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">hostingSlug</span> <span class="o">=</span> <span class="nx">user</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">/</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">repo</span><span class="p">;</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">source</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">APP_SOURCE</span> <span class="o">??</span> <span class="dl">'</span><span class="s1">https://github.com/</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">hostingSlug</span><span class="p">;</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">sourcePlat</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">APP_SOURCE_PLAT</span> <span class="o">??</span> <span class="dl">'</span><span class="s1">GitHub</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">/// Site URL</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">site</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">APP_SITE</span> <span class="o">??</span> <span class="dl">'</span><span class="s1">https://</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">user</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">.github.io</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">base</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">APP_BASE</span> <span class="o">??</span> <span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">siteUrl</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">APP_SITE_URL</span> <span class="o">??</span> <span class="nx">site</span> <span class="o">+</span> <span class="nx">base</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Create a <code class="language-plaintext highlighter-rouge">config/index.ts</code> to export all sections for convenience:</li>
+</ol>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Config Pattern for Astro. Inspired by Apathetic Tools · MIT</span>
+<span class="c1">// https://github.com/apathetic-tools/snippets/blob/main/docs/astro/config-pattern</span>
+<span class="k">export</span> <span class="o">*</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./header</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">export</span> <span class="o">*</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./hosting</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">export</span> <span class="o">*</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./social</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">export</span> <span class="o">*</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./translation</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">export</span> <span class="o">*</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./sidebar</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">export</span> <span class="o">*</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./blog</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+<p>Only include the files you have in your own project.</p>
+
+<h2 id="usage">Usage</h2>
+
+<p>You can import the configuration in any <code class="language-plaintext highlighter-rouge">.astro</code>, <code class="language-plaintext highlighter-rouge">.mdx</code>, or <code class="language-plaintext highlighter-rouge">astro.config.mjs</code> (<code class="language-plaintext highlighter-rouge">.ts</code>, etc.) file. For example:</p>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span>
+  <span class="nx">siteName</span><span class="p">,</span> <span class="nx">title</span><span class="p">,</span> <span class="nx">description</span><span class="p">,</span> <span class="nx">base</span><span class="p">,</span> <span class="nx">site</span><span class="p">,</span> <span class="nx">source</span><span class="p">,</span>
+  <span class="nx">social</span><span class="p">,</span> <span class="nx">defaultLocale</span><span class="p">,</span> <span class="nx">locales</span><span class="p">,</span>
+  <span class="nx">sidebarConfig</span><span class="p">,</span> <span class="nx">sidebarOptions</span><span class="p">,</span>
+  <span class="nx">author</span><span class="p">,</span> <span class="nx">authorSlug</span><span class="p">,</span> <span class="nx">blogName</span><span class="p">,</span> <span class="nx">blogSlug</span>
+<span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">./config</span><span class="dl">'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Then use the variables wherever needed in your project.</p>
+
+<hr />
+
+<p>✅ This pattern helps make your configuration modular, readable, and easier to maintain as your Astro project grows.</p>
+
+<p><strong>📚 Inspiration and Sources</strong></p>
+<ul>
+  <li><a href="https://github.com/withastro/docs/blob/main/astro.config.ts">Astro Docs· astro.config.ts</a> · MIT</li>
+</ul>
+
+<p>✨ <em>AI was used to help draft language, formatting, and code — plus we just love em dashes.</em></p>
+
+<p align="center">
+  <sub>😐 <a href="https://github.com/apathetic-tools">Apathetic Tools</a> © 
+  Guide <a href="../../../LICENSE-CONTENT">CC&nbsp;BY-NC</a> · 
+  Code <a href="../../../LICENSE">MIT</a></sub>
+</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Apathetic Recipes</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Apathetic Tools</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Notes and snippets from our elsewhere learnings.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

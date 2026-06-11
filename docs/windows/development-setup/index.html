@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Windows Development Setup | Apathetic Recipes</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Windows Development Setup" />
+<meta name="author" content="Apathetic Tools" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Notes and snippets from our elsewhere learnings." />
+<meta property="og:description" content="Notes and snippets from our elsewhere learnings." />
+<link rel="canonical" href="https://apathetic-recipes.github.io/docs/windows/development-setup/" />
+<meta property="og:url" content="https://apathetic-recipes.github.io/docs/windows/development-setup/" />
+<meta property="og:site_name" content="Apathetic Recipes" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Windows Development Setup" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Apathetic Tools"},"description":"Notes and snippets from our elsewhere learnings.","headline":"Windows Development Setup","url":"https://apathetic-recipes.github.io/docs/windows/development-setup/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://apathetic-recipes.github.io/feed.xml" title="Apathetic Recipes" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Apathetic Recipes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/decisions-md/v1.html">DECISIONS.md Style</a><a class="page-link" href="/docs/astro-starlight/icons-by-category/assets/partials/pageFooter.partial.html">How to use built-in Icons</a><a class="page-link" href="/docs/astro-starlight/icons-by-category/assets/partials/pageHeader.partial.html">Starlight Icons by Category ✨</a><a class="page-link" href="/decisions-md/">DECISIONS.md Style</a><a class="page-link" href="/docs/">Apathetic Tools Snippet Documentation</a><a class="page-link" href="/docs/astro-starlight/">Starlight Snippets</a><a class="page-link" href="/docs/astro-starlight/icons-by-category/">Starlight Icons by Category ✨</a><a class="page-link" href="/docs/astro-starlight/sidebar-toggles/">Sidebar Toggles</a><a class="page-link" href="/docs/astro-starlight/theme-selector-firefox-windows-fix/">Theme Selector fix for Firefox on Windows</a><a class="page-link" href="/docs/astro-starlight/topics-astro-docs-theme/">Theming Starlight Sidebar Topics as Astro Docs</a><a class="page-link" href="/docs/astro/">Astro Snippets</a><a class="page-link" href="/docs/git/">Git Snippets</a><a class="page-link" href="/docs/git/per-repository-user/">Git – Per Repository User</a><a class="page-link" href="/docs/github/">Github Snippets</a><a class="page-link" href="/docs/github/github-pages-deploy/">Github Pages Deploy</a><a class="page-link" href="/docs/javascript/">Javascript Snippets</a><a class="page-link" href="/docs/javascript/config-pattern/">Config Pattern for Astro</a><a class="page-link" href="/docs/text/">Text Snippets</a><a class="page-link" href="/docs/text/utf8-emoji-icons-by-category/">UTF-8 Emoji Icons by Category</a><a class="page-link" href="/docs/windows/">Windows Snippets</a><a class="page-link" href="/docs/windows/development-setup/">Windows Development Setup</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Windows Development Setup</h1>
+  </header>
+
+  <div class="post-content">
+    <h1 id="windows-development-setup">Windows Development Setup</h1>
+
+<p>This <a href="https://github.com/apathetic-tools/snippets">snippet</a> was created by 😐 <a href="https://github.com/apathetic-tools">Apathetic Tools</a>, with thanks to the <a href="https://github.com/withastro/docs">Astro Docs</a> for much inspiration.<br />
+<sub>Guide licensed <a href="/LICENSE-CONTENT">CC BY-NC</a> · Code snippets <a href="/LICENSE">MIT</a></sub></p>
+
+<h2 id="the-paved-road">The Paved Road</h2>
+
+<p>Developers typically have very personalized preferences, but when working with others, it’s more important to have a <strong>known working setup</strong> that results in consistent code for the team.</p>
+
+<p>Don’t argue over developer setups — provide a “paved road” that maximizes the developer experience (DX).</p>
+
+<h2 id="software">Software</h2>
+<ul>
+  <li>
+    <p><a href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux (WSL)</a></p>
+
+    <p>Linux is the de facto standard for production servers. Running development in WSL ensures consistency with production environments and gives a good balance between Windows and Linux tooling.</p>
+  </li>
+  <li>
+    <p><a href="https://apps.microsoft.com/detail/9pdxgncfsczv">Ubuntu-latest for WSL (via ms store)</a></p>
+
+    <p>Provides a stable Linux environment with minimal setup required. Works reliably out of the box.</p>
+  </li>
+  <li>
+    <p><a href="https://apps.microsoft.com/detail/xp9khm4bk9fz7q">VSCode</a></p>
+
+    <p>A popular, accessible editor. While VIM and other editors are powerful, VSCode is easier for most developers to onboard quickly.</p>
+  </li>
+</ul>
+
+<h2 id="where-to-put-project-code">Where to put project code</h2>
+
+<ul>
+  <li>Prefer an <strong>SSD</strong> for your project files — it significantly affects build times, especially with dependency-heavy environments like JavaScript or PHP.</li>
+  <li>Store projects <strong>inside the WSL filesystem</strong> for maximum speed.<br />
+Example structure: <code class="language-plaintext highlighter-rouge">/home/&lt;your-user&gt;/code/&lt;your-project&gt;</code> or shorthand <code class="language-plaintext highlighter-rouge">cd ~/code/&lt;your-project&gt;</code>.</li>
+</ul>
+
+<h2 id="accessing-wsl-from-windows-explorer">Accessing WSL from Windows Explorer</h2>
+
+<ul>
+  <li>You can access WSL paths via: <code class="language-plaintext highlighter-rouge">\\wsl.localhost\</code>.<br />
+Example: <code class="language-plaintext highlighter-rouge">\\wsl.localhost\Ubuntu\home\&lt;wsl-user&gt;\code\&lt;project-repo&gt;</code></li>
+  <li>Pin this path in Windows Explorer for convenience.</li>
+  <li>Some programs (e.g., TortoiseGit) may require marking it as a safe path since it behaves like a network location.</li>
+</ul>
+
+<h2 id="projects-and-vscode">Projects and VSCode</h2>
+
+<h3 id="vscode-workspace-shortcut">VSCode Workspace shortcut</h3>
+
+<p>Create a workspace file (<code class="language-plaintext highlighter-rouge">workspace.code-workspace</code>) to allow opening a project quickly in a dedicated VSCode window:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+	</span><span class="nl">"folders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+		</span><span class="p">{</span><span class="w">
+			</span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"."</span><span class="p">,</span><span class="w">
+		</span><span class="p">},</span><span class="w">
+	</span><span class="p">],</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li>Double-clicking this file in Windows Explorer opens the project in VSCode.</li>
+  <li>You may be prompted to reopen in WSL — a simple two-click solution.</li>
+</ul>
+
+<hr />
+
+<h3 id="git-ignore">Git ignore</h3>
+
+<p>Recommended <em>partial</em> <code class="language-plaintext highlighter-rouge">.gitignore</code> for a Windows + WSL project:</p>
+<pre><code class="language-gitignore"># Inspired by Apathetic Tools · MIT
+# https://github.com/apathetic-tools/snippets/blob/main/docs/windows/development-setup
+
+# build output
+dist/
+
+# Environment variables
+.env
+.env.production
+!.env.example
+
+# IDE configs
+.vscode/*
+.idea/
+.vimrc
+.nanorc
+.stackblitzrc
+sandbox.config.json
+
+# Allow Local workspace settings
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+
+# OS files
+.DS_Store
+Thumbs.db
+</code></pre>
+
+<hr />
+
+<h3 id="vscode-project-configuration">VSCode Project Configuration</h3>
+
+<p>Include the following in your project <code class="language-plaintext highlighter-rouge">.vscode</code> folder:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">.vscode/extensions.json</code>: recommended extensions</li>
+  <li><code class="language-plaintext highlighter-rouge">.vscode/launch.json</code>: shortcuts to start dev/build processes</li>
+  <li><code class="language-plaintext highlighter-rouge">.vscode/settings.json</code>: editor defaults, linting, formatting, etc.</li>
+</ul>
+
+<hr />
+
+<h3 id="recommended-vscode-extensions">Recommended VSCode Extensions</h3>
+
+<p><code class="language-plaintext highlighter-rouge">.vscode/extensions.json</code>:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"recommendations"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">    
+    </span><span class="s2">"editorconfig.editorconfig"</span><span class="p">,</span><span class="w">    
+    </span><span class="s2">"ms-vscode-remote.remote-wsl"</span><span class="p">,</span><span class="w">    
+    </span><span class="s2">"bierner.github-markdown-preview"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"unwantedRecommendations"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<ul>
+  <li><a href="https://marketplace.visualstudio.com/items?itemName=editorconfig.editorconfig">editorconfig.editorconfig</a>: <code class="language-plaintext highlighter-rouge">.editorconfig</code> consistent editor defaults</li>
+  <li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl">ms-vscode-remote.remote-wsl</a>: WSL remote development</li>
+  <li><a href="https://marketplace.visualstudio.com/items?itemName=bierner.github-markdown-preview">bierner.github-markdown-preview</a>: enhanced GitHub markdown preview pack</li>
+</ul>
+
+<h4 id="per-workspace-extensions">Per-workspace extensions:</h4>
+<p>Install extensions globally but disable them. Then right-click → <strong>Enable (in workspace)</strong> to scope them to your project only.</p>
+
+<h2 id="project-and-editor-defaults">Project and Editor Defaults</h2>
+<p>Provide consistent editor defaults using <code class="language-plaintext highlighter-rouge">.editorconfig</code>:</p>
+<pre><code class="language-editorconfig"># EditorConfig is awesome: https://EditorConfig.org
+
+# Inspired by Apathetic Tools · MIT
+# https://github.com/apathetic-tools/snippets/blob/main/docs/windows/development-setup
+
+# top-most EditorConfig file
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = tab
+insert_final_newline = true
+trim_trailing_whitespace = false
+
+[{.*,*.md,*.mdx,*.json,*.toml,*.yml,}]
+indent_style = space
+</code></pre>
+
+<ul>
+  <li>Ensures consistent formatting across multiple editors.</li>
+  <li>Focus on consistency rather than personal preferences.</li>
+</ul>
+
+<hr />
+
+<p>✅ Following this guide will provide a solid, consistent development environment on Windows with WSL and VSCode.</p>
+
+<p><strong>📚 Inspiration and Sources</strong></p>
+<ul>
+  <li><a href="https://github.com/withastro/docs/blob/main/.gitignore">Astro Docs · .gitignore</a> · MIT</li>
+  <li><a href="https://github.com/withastro/docs/blob/main/.editorconfig">Astro Docs · .editorconfig</a> · MIT</li>
+  <li><a href="https://github.com/microsoft/vscode/blob/main/.editorconfig">VSCode · .editorconfig</a> · MIT</li>
+</ul>
+
+<p>✨ <em>AI was used to help draft language, formatting, and code — plus we just love em dashes.</em></p>
+
+<p align="center">
+  <sub>😐 <a href="https://github.com/apathetic-tools">Apathetic Tools</a> © 
+  Guide <a href="../../../LICENSE-CONTENT">CC&nbsp;BY-NC</a> · 
+  Code <a href="../../../LICENSE">MIT</a></sub>
+</p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Apathetic Recipes</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Apathetic Tools</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Notes and snippets from our elsewhere learnings.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

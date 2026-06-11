@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Apathetic Recipes | Notes and snippets from our elsewhere learnings.</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Apathetic Recipes" />
+<meta name="author" content="Apathetic Tools" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Notes and snippets from our elsewhere learnings." />
+<meta property="og:description" content="Notes and snippets from our elsewhere learnings." />
+<link rel="canonical" href="https://apathetic-recipes.github.io/" />
+<meta property="og:url" content="https://apathetic-recipes.github.io/" />
+<meta property="og:site_name" content="Apathetic Recipes" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Apathetic Recipes" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Apathetic Tools"},"description":"Notes and snippets from our elsewhere learnings.","headline":"Apathetic Recipes","name":"Apathetic Recipes","url":"https://apathetic-recipes.github.io/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://apathetic-recipes.github.io/feed.xml" title="Apathetic Recipes" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Apathetic Recipes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/decisions-md/v1.html">DECISIONS.md Style</a><a class="page-link" href="/docs/astro-starlight/icons-by-category/assets/partials/pageFooter.partial.html">How to use built-in Icons</a><a class="page-link" href="/docs/astro-starlight/icons-by-category/assets/partials/pageHeader.partial.html">Starlight Icons by Category ✨</a><a class="page-link" href="/decisions-md/">DECISIONS.md Style</a><a class="page-link" href="/docs/">Apathetic Tools Snippet Documentation</a><a class="page-link" href="/docs/astro-starlight/">Starlight Snippets</a><a class="page-link" href="/docs/astro-starlight/icons-by-category/">Starlight Icons by Category ✨</a><a class="page-link" href="/docs/astro-starlight/sidebar-toggles/">Sidebar Toggles</a><a class="page-link" href="/docs/astro-starlight/theme-selector-firefox-windows-fix/">Theme Selector fix for Firefox on Windows</a><a class="page-link" href="/docs/astro-starlight/topics-astro-docs-theme/">Theming Starlight Sidebar Topics as Astro Docs</a><a class="page-link" href="/docs/astro/">Astro Snippets</a><a class="page-link" href="/docs/git/">Git Snippets</a><a class="page-link" href="/docs/git/per-repository-user/">Git – Per Repository User</a><a class="page-link" href="/docs/github/">Github Snippets</a><a class="page-link" href="/docs/github/github-pages-deploy/">Github Pages Deploy</a><a class="page-link" href="/docs/javascript/">Javascript Snippets</a><a class="page-link" href="/docs/javascript/config-pattern/">Config Pattern for Astro</a><a class="page-link" href="/docs/text/">Text Snippets</a><a class="page-link" href="/docs/text/utf8-emoji-icons-by-category/">UTF-8 Emoji Icons by Category</a><a class="page-link" href="/docs/windows/">Windows Snippets</a><a class="page-link" href="/docs/windows/development-setup/">Windows Development Setup</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="home"><!-- README.md -->
+
+<h1 id="apathetic-tools-recipes">Apathetic Tools Recipes</h1>
+
+<p><a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT" /></a>
+<a href="./LICENSE-CONTENT"><img src="https://img.shields.io/badge/Docs%20License-CC%20BY--NC%204.0-blue.svg" alt="License: CC BY-NC 4.0" /></a></p>
+
+<p><em>Notes and recipes from our elsewhere learnings.</em></p>
+
+<p>A collection of small, practical recipes and guides.</p>
+
+<p>by 😐 <a href="https://github.com/apathetic-tools">Apathetic Tools</a></p>
+
+<blockquote>
+  <p>🧬 Spin-offs are recipes that evolved into full projects.
+They began here and grew their own repositories — still kindred at heart.</p>
+</blockquote>
+
+<h2 id="astro--starlight">Astro &amp; Starlight</h2>
+<p><em>Little improvements to make the docs themes less annoying.</em></p>
+
+<ul>
+  <li>
+    <p><a href="/docs/astro/wsl-mnt-polling-fix/">Hot reload WSL <code class="language-plaintext highlighter-rouge">/mnt</code> Polling Fix</a><br />
+Enable reliable hot-reloading on <em>mnt</em> drives in WSL.</p>
+  </li>
+  <li>
+    <p><a href="/docs/astro-starlight/sidebar-toggles/">Sidebar Toggles for default themes</a><br />
+Give readers the power to collapse left and right sidebars.</p>
+  </li>
+  <li>
+    <p><a href="/docs/astro-starlight/topics-astro-docs-theme/">Sidebar Topics using Astro Docs theme</a><br />
+Transform your sidebar topics to match the polished sidebar style of Astro Docs.</p>
+  </li>
+  <li>
+    <p><a href="/docs/astro-starlight/theme-selector-firefox-windows-fix/">Dark Mode Theme Selector Fix for default theme on Firefox on Windows</a><br />
+Makes dark mode theme options legible in Firefox.</p>
+  </li>
+  <li>
+    <p><a href="/docs/astro-starlight/icons-by-category/">SVG Icons by Category reference</a><br />
+Quickly find the perfect icon for your components.</p>
+  </li>
+</ul>
+
+<h2 id="git--github">Git &amp; Github</h2>
+<p><em>Config hacks and deploy rituals.</em></p>
+
+<ul>
+  <li>
+    <p><a href="/docs/git/per-repository-user/">Per Repository User</a><br />
+Configure Git to use different user accounts per repository.</p>
+  </li>
+  <li>
+    <p><a href="/docs/github/github-pages-deploy/">GitHub Pages Deployments</a><br />
+Deploy from any repo to any repo or server using GitHub Pages and custom deploy tasks.</p>
+  </li>
+</ul>
+
+<h2 id="writing--documentation">Writing &amp; Documentation</h2>
+<p><em>For when code needs a story.</em></p>
+
+<ul>
+  <li>
+    <p><a href="/docs/text/utf8-emoji-icons-by-category/">UTF-8 Emoji Icons by Category</a><br />
+Quickly find the perfect text-icon for your writing.</p>
+  </li>
+  <li>
+    <p>DECISIONS.md<br />
+Document project decisions as much as its usage.</p>
+  </li>
+  <li>
+    <p><strong>Spin-off:</strong> <a href="https://apathetic-tools.github.com/license-noai">LICENSE-NOAI</a><br />
+A permissive license with an explicit AI-use boundary clause.</p>
+  </li>
+  <li>
+    <p><strong>Spin-off:</strong> <a href="https://apathetic-tools.github.com/DEPENDENCIES.md">DEPENDENCIES.md</a><br />
+Communicate and document why you use dependencies in your project.</p>
+  </li>
+</ul>
+
+<h2 id="programming--architecture">Programming &amp; Architecture</h2>
+<p><em>Where small scripts grow into systems.</em></p>
+
+<ul>
+  <li>
+    <p><a href="/docs/javascript/config-pattern/">Config Pattern for Javascript Projects</a><br />
+Modularizes project configuration for clearer diffs.</p>
+  </li>
+  <li>
+    <p>Cross-platform minimalist build system — <strong>Spin-off:</strong> <a href="https://apathetic-tools.github.com/pocket-build">Pocket-build</a></p>
+  </li>
+  <li>
+    <p>Python · Stiching modules into single-files — <strong>Spin-off:</strong> <a href="https://apathetic-tools.github.com/serger">Serger</a></p>
+  </li>
+</ul>
+
+<h2 id="ai-collaboration">AI Collaboration</h2>
+<p><em>Where humans and tools share the keyboard.</em></p>
+
+<ul>
+  <li>Use file headers for AI conversation context — <strong>Spin-off:</strong> <a href="https://apathetic-tools.github.com/file-header">File Header</a> + <a href="https://apathetic-tools.github.com/vscode-file-header">VSCode Extension</a></li>
+</ul>
+
+<h2 id="development--environment">Development &amp; Environment</h2>
+<p><em>Setup notes that shouldn’t be this hard.</em></p>
+
+<ul>
+  <li><a href="/docs/windows/development-setup/">Windows Development Setup</a><br />
+Recommendations with WSL, VSCode, and editor defaults for consistent development.</li>
+</ul>
+
+<h2 id="licensing">Licensing</h2>
+
+<p><strong>Code recipes and examples:</strong> <a href="/LICENSE">MIT License</a><br />
+  free to use with attribution in any project, commercial or open source.</p>
+
+<p><strong>Written guides and documentation:</strong> <a href="/LICENSE-CONTENT">CC BY-NC</a><br />
+  share or adapt with attribution, but not for commercial use.</p>
+
+<p><em>(Some of our other larger projects may use AGPLv3)</em></p>
+
+<hr />
+
+<blockquote>
+  <p>✨ <em>AI was used to help draft language, formatting, and code — plus we just love em dashes.</em></p>
+</blockquote>
+
+<p align="center">
+  <sub>😐 <a href="https://github.com/apathetic-tools">Apathetic Tools</a> © 
+  Guide <a href="./LICENSE-CONTENT">CC&nbsp;BY-NC</a> · 
+  Code <a href="./LICENSE">MIT</a></sub>
+</p>
+</div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Apathetic Recipes</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Apathetic Tools</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Notes and snippets from our elsewhere learnings.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

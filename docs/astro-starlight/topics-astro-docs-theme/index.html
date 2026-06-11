@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Theming Starlight Sidebar Topics as Astro Docs | Apathetic Recipes</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Theming Starlight Sidebar Topics as Astro Docs" />
+<meta name="author" content="Apathetic Tools" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Notes and snippets from our elsewhere learnings." />
+<meta property="og:description" content="Notes and snippets from our elsewhere learnings." />
+<link rel="canonical" href="https://apathetic-recipes.github.io/docs/astro-starlight/topics-astro-docs-theme/" />
+<meta property="og:url" content="https://apathetic-recipes.github.io/docs/astro-starlight/topics-astro-docs-theme/" />
+<meta property="og:site_name" content="Apathetic Recipes" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Theming Starlight Sidebar Topics as Astro Docs" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Apathetic Tools"},"description":"Notes and snippets from our elsewhere learnings.","headline":"Theming Starlight Sidebar Topics as Astro Docs","url":"https://apathetic-recipes.github.io/docs/astro-starlight/topics-astro-docs-theme/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://apathetic-recipes.github.io/feed.xml" title="Apathetic Recipes" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Apathetic Recipes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/decisions-md/v1.html">DECISIONS.md Style</a><a class="page-link" href="/docs/astro-starlight/icons-by-category/assets/partials/pageFooter.partial.html">How to use built-in Icons</a><a class="page-link" href="/docs/astro-starlight/icons-by-category/assets/partials/pageHeader.partial.html">Starlight Icons by Category ✨</a><a class="page-link" href="/decisions-md/">DECISIONS.md Style</a><a class="page-link" href="/docs/">Apathetic Tools Snippet Documentation</a><a class="page-link" href="/docs/astro-starlight/">Starlight Snippets</a><a class="page-link" href="/docs/astro-starlight/icons-by-category/">Starlight Icons by Category ✨</a><a class="page-link" href="/docs/astro-starlight/sidebar-toggles/">Sidebar Toggles</a><a class="page-link" href="/docs/astro-starlight/theme-selector-firefox-windows-fix/">Theme Selector fix for Firefox on Windows</a><a class="page-link" href="/docs/astro-starlight/topics-astro-docs-theme/">Theming Starlight Sidebar Topics as Astro Docs</a><a class="page-link" href="/docs/astro/">Astro Snippets</a><a class="page-link" href="/docs/git/">Git Snippets</a><a class="page-link" href="/docs/git/per-repository-user/">Git – Per Repository User</a><a class="page-link" href="/docs/github/">Github Snippets</a><a class="page-link" href="/docs/github/github-pages-deploy/">Github Pages Deploy</a><a class="page-link" href="/docs/javascript/">Javascript Snippets</a><a class="page-link" href="/docs/javascript/config-pattern/">Config Pattern for Astro</a><a class="page-link" href="/docs/text/">Text Snippets</a><a class="page-link" href="/docs/text/utf8-emoji-icons-by-category/">UTF-8 Emoji Icons by Category</a><a class="page-link" href="/docs/windows/">Windows Snippets</a><a class="page-link" href="/docs/windows/development-setup/">Windows Development Setup</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Theming Starlight Sidebar Topics as Astro Docs</h1>
+  </header>
+
+  <div class="post-content">
+    <h1 id="theming-starlight-sidebar-topics-as-astro-docs">Theming Starlight Sidebar Topics as Astro Docs</h1>
+
+<p>Transform your Starlight sidebar topics to match the polished sidebar style of Astro Docs.</p>
+
+<p>This <a href="https://github.com/apathetic-tools/snippets">snippet</a> was created by 😐 <a href="https://github.com/apathetic-tools">Apathetic Tools</a>, with thanks to <a href="https://docs.astro.build/">Astro Docs</a> and <a href="https://github.com/HiDeoo">Hideoo</a> for sharing their styles.<br />
+<sub>Guide licensed <a href="/LICENSE-CONTENT">CC BY-NC</a> · Code snippets <a href="/LICENSE">MIT</a></sub></p>
+
+<h2 id="goal">Goal</h2>
+
+<p><a href="https://starlight-sidebar-topics.netlify.app/">Starlight-sidebar-topics</a> provides switchable sidebar groups (called <em>topics</em>) for your <a href="https://starlight.astro.build/">Astro Starlight</a> documentation site.</p>
+
+<p>You may prefer the look of the <a href="https://docs.astro.build/">Official Astro Docs theme</a>, which is MIT licensed. It provides a more refined style than the default Starlight sidebar topics.</p>
+
+<h3 id="from-this">From this:</h3>
+
+<p><img src="/docs/astro-starlight/topics-astro-docs-theme/assets/starlight-sidebar-topics-default-theme.png" alt="starlight-sidebar-topics default theme" /></p>
+
+<h3 id="to-this">To this:</h3>
+
+<p><img src="/docs/astro-starlight/topics-astro-docs-theme/assets/docs-astro-build-sidebar-group-theme.png" alt="Astro Docs group theme" /></p>
+
+<p>The theme features a dark recessed look with rounded corners and highlights the currently selected topic with a pill-style indicator.</p>
+
+<h2 id="overview">Overview</h2>
+
+<p>Both methods replace the CSS provided by the <code class="language-plaintext highlighter-rouge">starlight-sidebar-topics</code> integration with custom styles to achieve the look of Astro Docs. Since the official Astro docs site implements its own sidebar group switcher, this is not a 1:1 conversion.</p>
+
+<p>Astro allows adding custom CSS files to your site. Starlight also lets you override specific components — even those usually managed by an integration — though doing so comes with extra work and a higher maintenance burden.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">starlight-sidebar-topics</code> integration does not currently support, nor plans to support, a dedicated theming mechanism separate from the framework<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup><sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">2</a></sup>.</p>
+
+<h3 id="method-a--custom-css">Method A — Custom CSS</h3>
+
+<p><strong>Pros:</strong></p>
+<ul>
+  <li>Single <code class="language-plaintext highlighter-rouge">.css</code> file → minimal maintenance.</li>
+  <li>Upstream components stay untouched → you benefit from future improvements as long as HTML/CSS structure is stable.</li>
+  <li>Low risk to site functionality since only styles are overridden.</li>
+  <li>Logic remains compatible even if the topics API changes.</li>
+</ul>
+
+<p><strong>Cons:</strong></p>
+<ul>
+  <li>Requires advanced, brittle CSS selector logic.</li>
+  <li>Must carefully reset or override upstream styles.</li>
+  <li>CSS may break if upstream HTML/CSS structure changes.</li>
+</ul>
+
+<blockquote>
+  <p>[!TIP]<br />
+Ideal for “lightweight theming” where you only want visual updates with minimal code maintenance.</p>
+</blockquote>
+
+<h3 id="method-b--components-overrides">Method B — Components Overrides</h3>
+
+<p><strong>Pros:</strong></p>
+<ul>
+  <li>Inline styles → stable and insulated from upstream changes.</li>
+  <li>Full extensibility → can combine features from multiple integrations.</li>
+  <li>Maximum control over behavior and markup (though we will only change styles).</li>
+</ul>
+
+<p><strong>Cons:</strong></p>
+<ul>
+  <li>Higher maintenance → must maintain the functionality of multiple overridden components.</li>
+  <li>Lose automatic updates from upstream components with no easy tracking.</li>
+  <li>Components must be updated if the topics API changes.</li>
+  <li>Increases code duplication across your repo.</li>
+</ul>
+
+<blockquote>
+  <p>[!TIP]<br />
+Best for “full control” scenarios, when you want behavior tweaks along with styling, or need major visual changes without wrestling with CSS selectors. Be aware this adds significant code maintenance.</p>
+</blockquote>
+
+<hr />
+
+<p>Summary:</p>
+<ul>
+  <li><strong>Custom CSS</strong> → best when you only want styling changes with minimal maintenance.</li>
+  <li><strong>Component Overrides</strong> → best when you need control over both styling and functionality, or want to merge features from multiple integrations.</li>
+</ul>
+
+<h2 id="using-method-a---theming-with-custom-css">Using Method A  — Theming with Custom CSS</h2>
+
+<p>In this method, we’ll keep all upstream components intact and only add a custom stylesheet to restyle the topics switcher.</p>
+
+<h3 id="step-1-register-a-custom-stylesheet">Step 1. Register a custom stylesheet</h3>
+
+<p><code class="language-plaintext highlighter-rouge">astro.config.mjs (.ts,etc)</code></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">defineConfig</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">astro/config</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">starlight</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@astrojs/starlight</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">starlightSidebarTopics</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">starlight-sidebar-topics</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// https://astro.build/config</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">defineConfig</span><span class="p">({</span>
+    <span class="na">integrations</span><span class="p">:</span> <span class="p">[</span><span class="nx">starlight</span><span class="p">({</span>
+        <span class="na">customCss</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">./src/styles/sidebar-topics-overrides.css</span><span class="dl">'</span><span class="p">],</span>
+        <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span><span class="nx">starlightSidebarTopics</span><span class="p">({</span> 
+            <span class="c1">// your topic configuration...</span>
+        <span class="p">})],</span>
+	<span class="p">})],</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>[!NOTE]<br />
+You may already have a <code class="language-plaintext highlighter-rouge">global.css</code> or other CSS files from integrations (e.g. Tailwind).<br />
+Make sure your new file comes <strong>after them</strong> in the order.</p>
+</blockquote>
+
+<h3 id="step-2-write-your-overrides">Step 2. Write your overrides</h3>
+
+<p>There are a few things we need to do:</p>
+<ul>
+  <li>Make use of the <code class="language-plaintext highlighter-rouge">.starlight-sidebar-topics</code> class to carefully overwrite the topics theme.</li>
+  <li>Undo any styles we don’t want from starlight-sidebar-topics’ <a href="https://github.com/HiDeoo/starlight-sidebar-topics/blob/main/packages/starlight-sidebar-topics/components/Topics.astro">Topics.astro</a></li>
+  <li>Add the styles from Astro Doc’s <a href="https://github.com/withastro/docs/blob/main/src/components/starlight/Sidebar.astro">Sidebar.astro</a>, <a href="https://github.com/withastro/docs/blob/main/src/components/tabs/TabbedContent.astro">TabbedContent.astro</a>, <a href="https://github.com/withastro/docs/blob/main/src/components/tabs/TabListItem.astro">TabListItem.astro</a>.</li>
+  <li>Resolve any conflicts, preferably by sticking to Astro Doc’s source and undo’ing the topics built-in one. e.g. Both handle the bottom margin in different ways.</li>
+  <li>Be very careful when crafting our selector priority so that our styles apply properly (this is decievingly complicated).</li>
+  <li>Test the styles in both light and dark mode, under multiple browsers.</li>
+</ul>
+
+<p>The <code class="language-plaintext highlighter-rouge">sidebar-topics-overrides.css</code> file below resets styles from <em>starlight-sidebar-topics</em> with overrides inspired by <em>Astro Docs</em>.</p>
+
+<p>Our example does so methodically so that you can more easily copy-paste verbatim from the source files into the overrides if something changes upstream.</p>
+
+<blockquote>
+  <p>[!NOTE]
+If you prefer all the classes merged into a single set of element modifications, see our <a href="/docs/astro-starlight/topics-astro-docs-theme/assets/sidebar-topics-overrides-merged.css">merged sidebar-topics-overrides.css</a> example instead. It is much shorter but may be more difficult to maintain over long periods of time.</p>
+</blockquote>
+
+<p><code class="language-plaintext highlighter-rouge">src/styles/sidebar-topics-overrides.css</code></p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/**
+ * Astro Docs theme port for starlight-sidebar-topics
+ * 
+ * Instructions:
+ * - Follow the step-by-step guide below to update this file
+ *
+ * Inspired by Apathetic Tools · MIT
+ * https://github.com/apathetic-tools/snippets/blob/main/docs/astro-starlight/topics-astro-docs-theme
+ * 
+ * Theme: Astro Docs · MIT
+ * https://github.com/withastro/docs
+ */</span>
+
+<span class="c">/**
+ * Step 1. Reset HiDeoo/starlight-sidebar-topics
+ *
+ * Source: starlight-sidebar-topics/components/Topics.astro
+ * https://github.com/HiDeoo/starlight-sidebar-topics/blob/main/packages/starlight-sidebar-topics/components/Topics.astro
+ *
+ * - Prefix with `.starlight-sidebar-topics` for specificity
+ * - Use `ul.starlight-sidebar-topics` (not `.starlight-sidebar-topics ul`) for the root
+ * - Drop `:global()` wrappers (already global CSS)
+ * - Use `revert` to reset original styles where possible
+ *
+ * Note: `[data-theme=...]` selectors must always remain first.
+ */</span>
+<span class="nt">ul</span><span class="nc">.starlight-sidebar-topics</span> <span class="p">{</span>
+	<span class="c">/* list-style: none;
+	padding: 0; */</span>	
+	<span class="nl">list-style</span><span class="p">:</span> <span class="n">revert</span><span class="p">;</span>
+	<span class="nl">padding</span><span class="p">:</span> <span class="n">revert</span><span class="p">;</span>	
+<span class="p">}</span>
+
+<span class="nt">ul</span><span class="nc">.starlight-sidebar-topics</span><span class="nd">::after</span> <span class="p">{</span>
+	<span class="c">/* content: '';
+    display: block;
+    margin-top: 1rem;
+    height: 1px;
+    border-top: 1px solid var(--sl-color-hairline-light); */</span>
+
+	<span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>	
+<span class="p">}</span>
+
+<span class="nc">.starlight-sidebar-topics</span> <span class="nt">li</span> <span class="p">{</span>	
+	<span class="c">/* overflow-wrap: anywhere; */</span>
+
+	 <span class="nl">overflow-wrap</span><span class="p">:</span> <span class="n">revert</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.starlight-sidebar-topics</span> <span class="nt">li</span> <span class="o">+</span> <span class="nt">li</span> <span class="p">{</span>
+	<span class="c">/* margin-top: 0.25rem; */</span>
+	
+	<span class="nl">margin-top</span><span class="p">:</span> <span class="n">revert</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.starlight-sidebar-topics</span> <span class="nt">a</span> <span class="p">{</span>
+	<span class="c">/* align-items: center;
+    color: var(--sl-color-white);
+    display: flex;
+    font-size: var(--sl-text-base);
+    font-weight: 600;
+    gap: 0.5rem;
+    line-height: 1.5;
+    padding: 0.3em 0.5rem;
+    text-decoration: none; */</span>
+
+	<span class="nl">align-items</span><span class="p">:</span> <span class="n">revert</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="n">revert</span><span class="p">;</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">revert</span><span class="p">;</span>
+    <span class="nl">font-size</span><span class="p">:</span> <span class="n">revert</span><span class="p">;</span>
+    <span class="nl">font-weight</span><span class="p">:</span> <span class="n">revert</span><span class="p">;</span>
+    <span class="py">gap</span><span class="p">:</span> <span class="n">revert</span><span class="p">;</span>
+    <span class="nl">line-height</span><span class="p">:</span> <span class="n">revert</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="n">revert</span><span class="p">;</span>
+    <span class="nl">text-decoration</span><span class="p">:</span> <span class="n">revert</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.starlight-sidebar-topics</span> <span class="nt">a</span><span class="nd">:is</span><span class="o">(</span><span class="nc">.starlight-sidebar-topics-current</span><span class="o">,</span> <span class="nd">:hover</span><span class="o">,</span> <span class="nd">:focus-visible</span><span class="o">)</span> <span class="p">{</span>
+	<span class="c">/* color: var(--sl-color-accent-high); */</span>
+	
+	<span class="nl">color</span><span class="p">:</span> <span class="n">revert</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">[</span><span class="nt">data-theme</span><span class="o">=</span><span class="s2">'light'</span><span class="o">]</span> <span class="nc">.starlight-sidebar-topics</span> <span class="nt">a</span><span class="nc">.starlight-sidebar-topics-current</span> <span class="p">{</span>
+	<span class="c">/* color: var(--sl-color-accent); */</span>
+	
+	<span class="nl">color</span><span class="p">:</span> <span class="n">revert</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.starlight-sidebar-topics</span> <span class="nc">.starlight-sidebar-topics-icon</span> <span class="p">{</span>
+	<span class="c">/* align-items: center;
+	border-radius: 0.25rem;
+	border: 1px solid var(--sl-color-gray-4);
+	display: flex;
+	justify-content: center;
+	padding: 0.1875rem;
+	padding: 0.25rem; */</span>
+
+	<span class="nl">align-items</span><span class="p">:</span> <span class="n">revert</span><span class="p">;</span>
+	<span class="nl">border-radius</span><span class="p">:</span> <span class="n">revert</span><span class="p">;</span>
+	<span class="nl">border</span><span class="p">:</span> <span class="n">revert</span><span class="p">;</span>
+	<span class="nl">display</span><span class="p">:</span> <span class="n">revert</span><span class="p">;</span>
+	<span class="nl">justify-content</span><span class="p">:</span> <span class="n">revert</span><span class="p">;</span>
+	<span class="nl">padding</span><span class="p">:</span> <span class="n">revert</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.starlight-sidebar-topics</span> <span class="nt">a</span><span class="nd">:is</span><span class="o">(</span><span class="nc">.starlight-sidebar-topics-current</span><span class="o">,</span> <span class="nd">:hover</span><span class="o">,</span> <span class="nd">:focus-visible</span><span class="o">)</span> <span class="nc">.starlight-sidebar-topics-icon</span> <span class="p">{</span>
+	<span class="c">/* background-color: var(--sl-color-text-accent);
+	border-color: var(--sl-color-text-accent);
+	color: var(--sl-color-text-invert); */</span>
+
+	<span class="nl">background-color</span><span class="p">:</span> <span class="n">revert</span><span class="p">;</span>
+	<span class="nl">border-color</span><span class="p">:</span> <span class="n">revert</span><span class="p">;</span>
+	<span class="nl">color</span><span class="p">:</span> <span class="n">revert</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.starlight-sidebar-topics</span> <span class="nc">.starlight-sidebar-topics-badge</span> <span class="p">{</span>
+	<span class="c">/* margin-inline-start: 0.25em; */</span>
+
+	<span class="py">margin-inline-start</span><span class="p">:</span> <span class="n">revert</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/**
+ * Step 2. Apply theme from astro/docs 
+ *
+ * Component #1: withastro/docs/components/starlight/Sidebar.astro
+ * https://github.com/withastro/docs/blob/main/src/components/starlight/Sidebar.astro
+ * - Remove Astro-only selectors: `.fallback`, `.desktop-footer`, `.sidebar-pane`
+ * - Merge `.tabbed-sidebar` + `.tab-list` → `ul.starlight-sidebar-topics`
+ * - `.tab-item` → `.starlight-sidebar-topics li`
+ * - `.icon` → `.starlight-sidebar-topics-icon`
+ * - `a[aria-selected="true"]` → `a.starlight-sidebar-topics-current`
+  * - Drop `:global()` wrappers (already global CSS)
+ *
+ * Component #2: withastro/docs/components/tabs/TabbedContent.astro
+ * Source: https://github.com/withastro/docs/blob/main/src/components/tabs/TabbedContent.astro
+ * - `.tab-list` → merge into `ul.starlight-sidebar-topics`
+ * - Remove `.tab-list--styled`, `.panels--styled`
+ *
+ * Note: add padding/margins together when merging  `.tabbed-sidebar` and `.tab-list`.
+ */</span>
+
+<span class="c">/* Styles for the custom tab switcher. */</span>
+<span class="nt">ul</span><span class="nc">.starlight-sidebar-topics</span> <span class="p">{</span>
+	
+	<span class="c">/* Layout variables */</span>
+	<span class="py">--tab-switcher-border-width</span><span class="p">:</span> <span class="m">1px</span><span class="p">;</span>
+	<span class="py">--tab-switcher-padding</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span><span class="m">0.25rem</span> <span class="n">-</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-border-width</span><span class="p">));</span>
+	<span class="py">--tab-item-border-radius</span><span class="p">:</span> <span class="m">0.5rem</span><span class="p">;</span>
+	<span class="py">--tab-switcher-border-radius</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span>
+		<span class="n">var</span><span class="p">(</span><span class="n">--tab-item-border-radius</span><span class="p">)</span> <span class="err">+</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-padding</span><span class="p">)</span> <span class="err">+</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-border-width</span><span class="p">)</span>
+	<span class="p">);</span>
+
+	<span class="c">/* Color variables */</span>
+	<span class="py">--tab-switcher-border-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-hairline-light</span><span class="p">);</span>
+	<span class="py">--tab-switcher-background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-gray-7</span><span class="p">,</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-gray-6</span><span class="p">));</span>
+	<span class="py">--tab-switcher-text-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-gray-3</span><span class="p">);</span>
+	<span class="py">--tab-switcher-text-color--active</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-white</span><span class="p">);</span>
+	<span class="py">--tab-switcher-icon-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-gray-4</span><span class="p">);</span>
+	<span class="py">--tab-switcher-icon-color--active</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-text-accent</span><span class="p">);</span>
+	<span class="py">--tab-item-background-color--hover</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-gray-6</span><span class="p">);</span>
+	<span class="py">--tab-item-background-color--active</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-black</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c">/* Dark theme variations */</span>
+<span class="o">[</span><span class="nt">data-theme</span><span class="o">=</span><span class="s2">'dark'</span><span class="o">]</span> <span class="nt">ul</span><span class="nc">.starlight-sidebar-topics</span> <span class="p">{</span>
+	<span class="py">--tab-switcher-text-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-gray-2</span><span class="p">);</span>
+	<span class="py">--tab-switcher-icon-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-gray-3</span><span class="p">);</span>
+	<span class="py">--tab-item-background-color--hover</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-gray-5</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">@media</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">50rem</span><span class="p">)</span> <span class="p">{</span>	
+	<span class="c">/* Dark theme variations with the desktop sidebar visible */</span>
+	<span class="o">[</span><span class="nt">data-theme</span><span class="o">=</span><span class="s2">'dark'</span><span class="o">]</span> <span class="nt">ul</span><span class="nc">.starlight-sidebar-topics</span> <span class="p">{</span>		
+		<span class="py">--tab-switcher-background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-black</span><span class="p">);</span>
+		<span class="py">--tab-item-background-color--hover</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-gray-6</span><span class="p">);</span>
+		<span class="py">--tab-item-background-color--active</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-gray-6</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nt">ul</span><span class="nc">.starlight-sidebar-topics</span> <span class="p">{</span>	
+	<span class="nl">border</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-border-width</span><span class="p">)</span> <span class="nb">solid</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-border-color</span><span class="p">);</span>
+	<span class="nl">border-radius</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-border-radius</span><span class="p">);</span>
+	<span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+	<span class="nl">flex-direction</span><span class="p">:</span> <span class="n">column</span><span class="p">;</span>
+	<span class="py">gap</span><span class="p">:</span> <span class="m">0.25rem</span><span class="p">;</span>
+	<span class="nl">padding</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-padding</span><span class="p">);</span>
+	<span class="nl">background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-background-color</span><span class="p">);</span>
+	<span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">1.5rem</span><span class="p">;</span>
+
+	<span class="c">/* from .tab-list */</span>
+	<span class="nl">list-style</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+	<span class="c">/* padding: 0; */</span> <span class="c">/* do not need to add this to above padding since it is 0 */</span>
+<span class="p">}</span>
+
+<span class="nc">.starlight-sidebar-topics</span> <span class="nt">li</span> <span class="nt">a</span> <span class="p">{</span>	
+	<span class="nl">border</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-border-width</span><span class="p">)</span> <span class="nb">solid</span> <span class="nb">transparent</span><span class="p">;</span>
+	<span class="nl">border-radius</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-item-border-radius</span><span class="p">);</span>
+	<span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+	<span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+	<span class="py">gap</span><span class="p">:</span> <span class="m">0.5rem</span><span class="p">;</span>
+	<span class="nl">padding</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span><span class="m">0.5rem</span> <span class="n">-</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-border-width</span><span class="p">));</span>	
+	<span class="nl">background-clip</span><span class="p">:</span> <span class="n">padding-box</span><span class="p">;</span>
+	<span class="nl">line-height</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-line-height-headings</span><span class="p">);</span>
+	<span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+	<span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-text-color</span><span class="p">);</span>
+	<span class="nl">font-weight</span><span class="p">:</span> <span class="m">600</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.starlight-sidebar-topics</span> <span class="nt">li</span> <span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span>	
+	<span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-text-color--active</span><span class="p">);</span>
+	<span class="nl">background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-item-background-color--hover</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nc">.starlight-sidebar-topics</span> <span class="nt">li</span> <span class="nt">a</span><span class="nc">.starlight-sidebar-topics-current</span> <span class="p">{</span>	
+	<span class="nl">border-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-border-color</span><span class="p">);</span>
+	<span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-text-color--active</span><span class="p">);</span>
+	<span class="nl">background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-item-background-color--active</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nc">.starlight-sidebar-topics</span> <span class="nc">.starlight-sidebar-topics-icon</span> <span class="p">{</span>	
+	<span class="nl">margin</span><span class="p">:</span> <span class="m">0.25rem</span><span class="p">;</span>
+	<span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-icon-color</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nc">.starlight-sidebar-topics</span> <span class="nt">li</span> <span class="nt">a</span><span class="nd">:hover</span> <span class="nc">.starlight-sidebar-topics-icon</span> <span class="p">{</span>	
+	<span class="nl">color</span><span class="p">:</span> <span class="nb">inherit</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.starlight-sidebar-topics</span> <span class="nt">li</span> <span class="nt">a</span><span class="nc">.starlight-sidebar-topics-current</span> <span class="nc">.starlight-sidebar-topics-icon</span> <span class="p">{</span>
+	<span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-icon-color--active</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c">/**
+ * Step 3. Adapt for Starlight + starlight-sidebar-topics markup
+ *
+ * - Remove bottom margins from astro/docs (Starlight handles spacing differently)
+ * - Icons are wrapped in a &lt;div&gt; in starlight-sidebar-topics (vs inline in astro/docs)
+ *   - Default: `display: block; align-items: normal;` → adds extra height
+ *   - Fix: force the `&lt;div&gt;` to inherit flex styles from the parent `&lt;a&gt;`
+ */</span>
+<span class="nt">ul</span><span class="nc">.starlight-sidebar-topics</span> <span class="p">{</span>
+	<span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.starlight-sidebar-topics</span> <span class="nt">li</span> <span class="p">{</span>	
+	<span class="nl">overflow-wrap</span><span class="p">:</span> <span class="n">anywhere</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.starlight-sidebar-topics</span> <span class="nc">.starlight-sidebar-topics-icon</span> <span class="p">{</span>
+	<span class="nl">align-items</span><span class="p">:</span> <span class="nb">inherit</span><span class="p">;</span>
+	<span class="nl">display</span><span class="p">:</span> <span class="nb">inherit</span><span class="p">;</span>
+	<span class="nl">justify-content</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>🎉 At this point, your site’s topics should now match the Astro Docs theme!
+You’re done with the CSS-only approach.</p>
+
+<blockquote>
+  <p>[!TIP]
+If your site doesn’t look like the screenshot:</p>
+  <ul>
+    <li>Verify you followed each step exactly.</li>
+    <li>Check for other CSS, themes, or integrations that may conflict.</li>
+    <li>Still not right? See <strong>Epilog: Getting the latest version</strong> for the fix.</li>
+  </ul>
+</blockquote>
+
+<h2 id="alternative-using-method-b--theming-with-component-overrides">Alternative: Using Method B — Theming with Component Overrides</h2>
+
+<p>This method is ideal when you need control over both styling and functionality, or want to merge features from multiple integrations. By taking ownership of upstream components, you isolate yourself from upstream changes — but this also increases your maintenance burden.</p>
+
+<blockquote>
+  <p>[!WARNING]<br />
+This approach duplicates large portions of <em>starlight-sidebar-topics</em> into your repo. If the integration changes upstream, you’ll need to manually update your copies.</p>
+</blockquote>
+
+<p>We’ll recreate <strong>starlight-sidebar-topics’</strong> sidebar components step by step until we reach the <code class="language-plaintext highlighter-rouge">Topics.astro</code> component where the inline styles live. That’s where we’ll inject our theme.</p>
+
+<hr />
+
+<h3 id="step-1-prepare-component-overrides">Step 1. Prepare component overrides</h3>
+
+<p>Create the following files to shadow the upstream components:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Local Path</th>
+      <th>Upstream Component</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">src/overrides/Sidebar.astro</code></td>
+      <td>Root Sidebar override</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">src/components/starlight-sidebar-topics/starlight/Sidebar.astro</code></td>
+      <td>StarlightSidebarTopics sidebar</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">src/components/starlight-sidebar-topics/Topics.astro</code></td>
+      <td>Topic list component with inline styles</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="step-2-override-starlights-sidebar">Step 2. Override Starlight’s Sidebar</h3>
+
+<p>Tell Starlight to use your root <code class="language-plaintext highlighter-rouge">Sidebar.astro</code> override instead of the default.</p>
+
+<p><code class="language-plaintext highlighter-rouge">astro.config.mjs (.ts,etc)</code></p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">defineConfig</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">astro/config</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">starlight</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@astrojs/starlight</span><span class="dl">'</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">starlightSidebarTopics</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">starlight-sidebar-topics</span><span class="dl">'</span><span class="p">;</span>
+
+<span class="c1">// https://astro.build/config</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">defineConfig</span><span class="p">({</span>
+    <span class="na">integrations</span><span class="p">:</span> <span class="p">[</span><span class="nx">starlight</span><span class="p">(</span>
+        <span class="na">components</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">Sidebar</span><span class="p">:</span>  <span class="dl">'</span><span class="s1">./src/overrides/Sidebar.astro</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="na">plugins</span><span class="p">:</span> <span class="p">[</span><span class="nx">starlightSidebarTopics</span><span class="p">({</span> 
+            <span class="c1">// your topic configuration...</span>
+        <span class="p">})],</span>
+    <span class="p">)],</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>After this step, your sidebar will be empty (or error) until we add content.</p>
+
+<hr />
+
+<h3 id="step-3-recreate-the-root-sidebarastro">Step 3. Recreate the root <code class="language-plaintext highlighter-rouge">Sidebar.astro</code></h3>
+
+<p>Copy <em>starlight-sidebar-topics</em>’ root <a href="https://github.com/HiDeoo/starlight-sidebar-topics/blob/main/packages/starlight-sidebar-topics/overrides/Sidebar.astro"><code class="language-plaintext highlighter-rouge">Sidebar.astro</code></a> into <code class="language-plaintext highlighter-rouge">src/overrides/Sidebar.astro</code>. No changes yet — this ensures your sidebar calls your custom components.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">---</span>
+<span class="c1">// Inspired by Apathetic Tools and HiDeoo/starlight-sidebar-topics · MIT</span>
+<span class="c1">// https://github.com/apathetic-tools/snippets/blob/main/docs/astro-starlight/topics-astro-docs-theme</span>
+<span class="c1">// https://github.com/HiDeoo/starlight-sidebar-topics/blob/main/packages/starlight-sidebar-topics/overrides/Sidebar.astro</span>
+
+<span class="k">import</span> <span class="nx">Default</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@astrojs/starlight/components/Sidebar.astro</span><span class="dl">'</span>
+<span class="k">import</span> <span class="nx">StarlightSidebarTopicsSidebar</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../components/starlight/Sidebar.astro</span><span class="dl">'</span>
+<span class="o">---</span>
+
+<span class="p">&lt;</span><span class="nc">StarlightSidebarTopicsSidebar</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nc">Default</span><span class="p">&gt;&lt;</span><span class="nt">slot</span> <span class="p">/&gt;&lt;/</span><span class="nc">Default</span><span class="p">&gt;</span>
+</code></pre></div></div>
+
+<p>Regular sidebar groups may now load, but topics will still be missing.</p>
+
+<hr />
+
+<h3 id="step-4-recreate-starlightsidebarastro">Step 4. Recreate <code class="language-plaintext highlighter-rouge">starlight/Sidebar.astro</code></h3>
+
+<p>Copy <em>starlight-sidebar-topics’</em> <a href="https://github.com/HiDeoo/starlight-sidebar-topics/blob/main/packages/starlight-sidebar-topics/components/starlight/Sidebar.astro"><code class="language-plaintext highlighter-rouge">starlight/Sidebar.astro</code></a> into <code class="language-plaintext highlighter-rouge">src/components/starlight-sidebar-topics/starlight/Sidebar.astro</code></p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">---</span>
+<span class="c1">// Inspired by Apathetic Tools and HiDeoo/starlight-sidebar-topics · MIT</span>
+<span class="c1">// https://github.com/apathetic-tools/snippets/blob/main/docs/astro-starlight/topics-astro-docs-theme</span>
+<span class="c1">// https://github.com/HiDeoo/starlight-sidebar-topics/blob/main/packages/starlight-sidebar-topics/components/starlight/Sidebar.astro</span>
+<span class="k">import</span> <span class="nx">Topics</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">../Topics.astro</span><span class="dl">'</span>
+
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">hasSidebar</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">Astro</span><span class="p">.</span><span class="nx">locals</span><span class="p">.</span><span class="nx">starlightRoute</span>
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">isPageWithTopic</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">Astro</span><span class="p">.</span><span class="nx">locals</span><span class="p">.</span><span class="nx">starlightSidebarTopics</span>
+<span class="o">---</span>
+
+<span class="p">{</span><span class="nx">hasSidebar</span> <span class="o">&amp;&amp;</span> <span class="nx">isPageWithTopic</span> <span class="o">&amp;&amp;</span> <span class="p">&lt;</span><span class="nc">Topics</span> <span class="p">/&gt;}</span>
+</code></pre></div></div>
+
+<p>The sidebar may load now, but the topic list will still be empty.</p>
+
+<h3 id="step-5-recreate-topicsastro">Step 5. Recreate <code class="language-plaintext highlighter-rouge">Topics.astro</code></h3>
+
+<p>Copy <em>starlight-sidebar-topics’</em> <a href="https://github.com/HiDeoo/starlight-sidebar-topics/blob/main/packages/starlight-sidebar-topics/components/Topics.astro"><code class="language-plaintext highlighter-rouge">Topics,astro</code></a> into <code class="language-plaintext highlighter-rouge">src/components/starlight-sidebar-topics/Topics.astro</code>. <strong>Keep the logic and markup identical</strong> — we’ll change only the styling.</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">---</span>
+<span class="c1">// Inspired by Apathetic Tools and HiDeoo/starlight-sidebar-topics · MIT</span>
+<span class="c1">// https://github.com/apathetic-tools/snippets/blob/main/docs/astro-starlight/topics-astro-docs-theme</span>
+<span class="c1">// https://github.com/HiDeoo/starlight-sidebar-topics/blob/main/packages/starlight-sidebar-topics/components/Topics.astro</span>
+<span class="c1">// Theme · Astro/docs · MIT: https://docs.astro.build/</span>
+
+<span class="k">import</span> <span class="p">{</span> <span class="nx">Badge</span><span class="p">,</span> <span class="nx">Icon</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@astrojs/starlight/components</span><span class="dl">'</span>
+
+<span class="kd">const</span> <span class="p">{</span> <span class="nx">topics</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">Astro</span><span class="p">.</span><span class="nx">locals</span><span class="p">.</span><span class="nx">starlightSidebarTopics</span>
+<span class="o">---</span>
+
+<span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="p">=</span><span class="s">"starlight-sidebar-topics"</span><span class="p">&gt;</span>
+  <span class="si">{</span>
+    <span class="nx">topics</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">topic</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+      <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="p">=</span><span class="si">{</span><span class="nx">topic</span><span class="p">.</span><span class="nx">link</span><span class="si">}</span> <span class="na">class</span><span class="err">:</span><span class="na">list</span><span class="p">=</span><span class="na">starlight-sidebar-topics-current</span><span class="p">&gt;</span>
+          <span class="si">{</span><span class="nx">topic</span><span class="p">.</span><span class="nx">icon</span> <span class="o">&amp;&amp;</span> <span class="p">(</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="p">=</span><span class="s">"starlight-sidebar-topics-icon"</span><span class="p">&gt;</span>
+              <span class="p">&lt;</span><span class="nc">Icon</span> <span class="na">name</span><span class="p">=</span><span class="si">{</span><span class="nx">topic</span><span class="p">.</span><span class="nx">icon</span><span class="si">}</span> <span class="p">/&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+          <span class="p">)</span><span class="si">}</span>
+          <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+            <span class="si">{</span><span class="nx">topic</span><span class="p">.</span><span class="nx">label</span><span class="si">}</span>
+            <span class="si">{</span><span class="nx">topic</span><span class="p">.</span><span class="nx">badge</span> <span class="o">&amp;&amp;</span> <span class="p">(</span>
+              <span class="p">&lt;</span><span class="nc">Badge</span> <span class="na">class</span><span class="p">=</span><span class="s">"starlight-sidebar-topics-badge"</span> <span class="na">text</span><span class="p">=</span><span class="si">{</span><span class="nx">topic</span><span class="p">.</span><span class="nx">badge</span><span class="p">.</span><span class="nx">text</span><span class="si">}</span> <span class="na">variant</span><span class="p">=</span><span class="si">{</span><span class="nx">topic</span><span class="p">.</span><span class="nx">badge</span><span class="p">.</span><span class="nx">variant</span><span class="si">}</span> <span class="p">/&gt;</span>
+            <span class="p">)</span><span class="si">}</span>
+          <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+      <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">))</span>
+  <span class="si">}</span>
+<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+/* original inline styles removed; we’ll inject our theme next */
+<span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="step-6-inject-custom-theme">Step 6. Inject custom theme</h3>
+
+<p>Append the following styles after the &lt;ul&gt; block. These are adapted from Astro Docs’ theme and scoped to this component.</p>
+
+<p><code class="language-plaintext highlighter-rouge">src/components/starlight-sidebar-topics/Topics.astro</code></p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="o">&lt;</span><span class="nt">style</span><span class="o">&gt;</span>
+	<span class="nc">.starlight-sidebar-topics</span> <span class="p">{</span>
+		<span class="c">/* Layout variables */</span>
+		<span class="py">--tab-switcher-border-width</span><span class="p">:</span> <span class="m">1px</span><span class="p">;</span>
+		<span class="py">--tab-switcher-padding</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span><span class="m">0.25rem</span> <span class="n">-</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-border-width</span><span class="p">));</span>
+		<span class="py">--tab-item-border-radius</span><span class="p">:</span> <span class="m">0.5rem</span><span class="p">;</span>
+		<span class="py">--tab-switcher-border-radius</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span>
+			<span class="n">var</span><span class="p">(</span><span class="n">--tab-item-border-radius</span><span class="p">)</span> <span class="err">+</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-padding</span><span class="p">)</span> <span class="err">+</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-border-width</span><span class="p">)</span>
+		<span class="p">);</span>
+
+		<span class="c">/* Color variables */</span>
+		<span class="py">--tab-switcher-border-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-hairline-light</span><span class="p">);</span>
+		<span class="py">--tab-switcher-background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-gray-7</span><span class="p">,</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-gray-6</span><span class="p">));</span>
+		<span class="py">--tab-switcher-text-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-gray-3</span><span class="p">);</span>
+		<span class="py">--tab-switcher-text-color--active</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-white</span><span class="p">);</span>
+		<span class="py">--tab-switcher-icon-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-gray-4</span><span class="p">);</span>
+		<span class="py">--tab-switcher-icon-color--active</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-text-accent</span><span class="p">);</span>
+		<span class="py">--tab-item-background-color--hover</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-gray-6</span><span class="p">);</span>
+		<span class="py">--tab-item-background-color--active</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-black</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="c">/* Dark theme variations */</span>
+	<span class="nd">:global</span><span class="o">([</span><span class="nt">data-theme</span><span class="o">=</span><span class="s2">'dark'</span><span class="o">])</span> <span class="nc">.starlight-sidebar-topics</span> <span class="p">{</span>
+		<span class="py">--tab-switcher-text-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-gray-2</span><span class="p">);</span>
+		<span class="py">--tab-switcher-icon-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-gray-3</span><span class="p">);</span>
+		<span class="py">--tab-item-background-color--hover</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-gray-5</span><span class="p">);</span>
+	<span class="p">}</span>
+
+	<span class="k">@media</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">50rem</span><span class="p">)</span> <span class="p">{</span>
+		<span class="c">/* Dark theme variations with the desktop sidebar visible */</span>
+		<span class="nd">:global</span><span class="o">([</span><span class="nt">data-theme</span><span class="o">=</span><span class="s2">'dark'</span><span class="o">])</span> <span class="nc">.starlight-sidebar-topics</span> <span class="p">{</span>
+			<span class="py">--tab-switcher-background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-black</span><span class="p">);</span>
+			<span class="py">--tab-item-background-color--hover</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-gray-6</span><span class="p">);</span>
+			<span class="py">--tab-item-background-color--active</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-color-gray-6</span><span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+  <span class="nt">ul</span> <span class="p">{</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-border-width</span><span class="p">)</span> <span class="nb">solid</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-border-color</span><span class="p">);</span>
+		<span class="nl">border-radius</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-border-radius</span><span class="p">);</span>
+		<span class="nl">list-style</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+		<span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+		<span class="nl">flex-direction</span><span class="p">:</span> <span class="n">column</span><span class="p">;</span>		
+		<span class="py">gap</span><span class="p">:</span> <span class="m">0.25rem</span><span class="p">;</span>
+		<span class="nl">padding</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-padding</span><span class="p">);</span>
+		<span class="nl">background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-background-color</span><span class="p">);</span>				
+		<span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nt">li</span> <span class="p">{</span>
+    <span class="nl">overflow-wrap</span><span class="p">:</span> <span class="n">anywhere</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nt">li</span> <span class="nd">:global</span><span class="o">(</span><span class="nt">a</span><span class="o">)</span> <span class="p">{</span>
+		<span class="nl">border</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-border-width</span><span class="p">)</span> <span class="nb">solid</span> <span class="nb">transparent</span><span class="p">;</span>
+		<span class="nl">border-radius</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-item-border-radius</span><span class="p">);</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+		<span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>		
+		<span class="py">gap</span><span class="p">:</span> <span class="m">0.5rem</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="n">calc</span><span class="p">(</span><span class="m">0.5rem</span> <span class="n">-</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-border-width</span><span class="p">));</span>
+		<span class="nl">background-clip</span><span class="p">:</span> <span class="n">padding-box</span><span class="p">;</span>
+		<span class="nl">line-height</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--sl-line-height-headings</span><span class="p">);</span>
+		<span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+		<span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-text-color</span><span class="p">);</span>
+		<span class="nl">font-weight</span><span class="p">:</span> <span class="m">600</span><span class="p">;</span>		
+  <span class="p">}</span>
+
+	<span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span>
+		<span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-text-color--active</span><span class="p">);</span>
+		<span class="nl">background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-item-background-color--hover</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="nt">a</span><span class="nc">.starlight-sidebar-topics-current</span> <span class="p">{</span>
+		<span class="nl">border-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-border-color</span><span class="p">);</span>
+		<span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-text-color--active</span><span class="p">);</span>
+		<span class="nl">background-color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-item-background-color--active</span><span class="p">);</span>
+	<span class="p">}</span>
+	
+		<span class="c">/* Icon wrapper */</span>
+  <span class="nc">.starlight-sidebar-topics-icon</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>		
+		<span class="nl">justify-content</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+		<span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+		<span class="nl">margin</span><span class="p">:</span> <span class="m">0.25rem</span><span class="p">;</span>
+		<span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-icon-color</span><span class="p">);</span>
+  <span class="p">}</span>  
+
+	<span class="nt">a</span><span class="nd">:hover</span> <span class="nc">.starlight-sidebar-topics-icon</span> <span class="p">{</span>
+		<span class="nl">color</span><span class="p">:</span> <span class="nb">inherit</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="nt">a</span><span class="nc">.starlight-sidebar-topics-current</span> <span class="nc">.starlight-sidebar-topics-icon</span> <span class="p">{</span>
+		<span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--tab-switcher-icon-color--active</span><span class="p">);</span>
+	<span class="p">}</span>
+
+  <span class="nc">.starlight-sidebar-topics-badge</span> <span class="p">{</span>
+    <span class="py">margin-inline-start</span><span class="p">:</span> <span class="m">0.25em</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<hr />
+
+<blockquote>
+  <p>[!TIP]
+To prevent future style conflicts, you can rename the class prefix<br />
+(for example, use <code class="language-plaintext highlighter-rouge">my-sidebar-topics</code> instead of <code class="language-plaintext highlighter-rouge">starlight-sidebar-topics</code>)<br />
+to fully isolate this component.</p>
+</blockquote>
+
+<p>🎉 At this point your site’s topics should match the Astro Docs theme! You’re done with the component-override approach.</p>
+
+<blockquote>
+  <p>[!TIP]
+If your site doesn’t look like the screenshot:</p>
+  <ul>
+    <li>Verify you followed each step exactly.</li>
+    <li>Check for other CSS, themes, or integrations that may conflict.</li>
+    <li>Still not right? See <strong>Epilog: Getting the latest version</strong> for the fix.</li>
+  </ul>
+</blockquote>
+
+<h2 id="wrap-up">Wrap-up</h2>
+
+<p>You’ve successfully themed your topics sidebar to match the Astro Docs style!</p>
+
+<ul>
+  <li><strong>Method A:</strong> Quick, low-maintenance CSS overrides. Ideal if you mostly care about styles and want to stay aligned with upstream updates.</li>
+  <li><strong>Method B:</strong> Full control via component overrides. Inline styles are resilient, but you’ll need to maintain overridden components manually.</li>
+</ul>
+
+<p>Either approach will give your site a polished, consistent look while letting you balance control versus maintenance.</p>
+
+<p><strong>Enjoy your newly themed sidebar!</strong></p>
+
+<p><img src="/docs/astro-starlight/topics-astro-docs-theme/assets/starlight-sidebar-topics-astro-docs-theme.png" alt="Astro Docs group theme" /></p>
+
+<h2 id="epilog-getting-the-latest-version">Epilog: Getting the latest version</h2>
+
+<p>This step is optional. The guide is usually up to date, but if your styles don’t match the screenshot or you’re updating to a newer version of any theme, this section shows how to safely update your styles.</p>
+
+<blockquote>
+  <p>[!TIP]
+Before updating, ensure:</p>
+  <ul>
+    <li>You’ve followed the guide as-is (it’s likely current)</li>
+    <li>No conflicting CSS, themes, or integrations are installed</li>
+  </ul>
+</blockquote>
+
+<p>Still off? Let’s update the styles to the latest version.</p>
+
+<hr />
+
+<h3 id="what-may-have-changed">What may have changed</h3>
+<ul>
+  <li>Astro Docs theme</li>
+  <li>Starlight theme</li>
+  <li>starlight-sidebar-topics theme</li>
+</ul>
+
+<p>Each theme contains both <strong>styles (CSS)</strong> and <strong>markup (HTML/Components)</strong>, which may affect the topics sidebar.</p>
+
+<hr />
+
+<h3 id="component-structure-sst-vs-astro-docs">Component Structure (SST vs Astro Docs)</h3>
+
+<p>Our site uses <strong>Hideoo/starlight-sidebar-topics</strong> (SST) for topics, alongside the regular sidebar:</p>
+
+<ul>
+  <li><a href="https://github.com/HiDeoo/starlight-sidebar-topics/blob/main/packages/starlight-sidebar-topics/overrides/Sidebar.astro">sst/overrides/Sidebar.astro</a>
+    <ul>
+      <li><em>(topics only)</em> https://github.com/HiDeoo/starlight-sidebar-topics/blob/main/packages/starlight-sidebar-topics/components/starlight/Sidebar.astro
+        <ul>
+          <li><a href="https://github.com/HiDeoo/starlight-sidebar-topics/blob/main/packages/starlight-sidebar-topics/components/Topics.astro">sst/componeents/Topics.astro</a>
+            <ul>
+              <li><em>(actual topic listing)</em>
+                <ul>
+                  <li><a href="https://github.com/withastro/starlight/blob/main/packages/starlight/user-components/Icon.astro">starlight/user-components/Icon.astro</a></li>
+                  <li><a href="https://github.com/withastro/starlight/blob/main/packages/starlight/user-components/Badge.astro">starlight/user-components/Badge.astro</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><em>(regular sidebar)</em> <a href="https://github.com/withastro/starlight/blob/main/packages/starlight/components/Sidebar.astro">starlight/components/Sidebar.astro</a>
+        <ul>
+          <li><a href="https://github.com/withastro/starlight/blob/main/packages/starlight/components/SidebarPersister.astro">starlight/components/SidebarPersister.astro</a>
+            <ul>
+              <li><em>(actual regular sidebar listing)</em> <a href="https://github.com/withastro/starlight/blob/main/packages/starlight/components/SidebarSublist.astro">starlight/components/SidebarSublist.astro</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p>SST topics list sits <strong>next to</strong> the regular sidebar; it’s not nested.</p>
+</blockquote>
+
+<p><strong>Astro Docs (AD)</strong> uses a different structure and has evolved organically:</p>
+
+<ul>
+  <li><a href="https://github.com/withastro/docs/blob/main/src/components/starlight/Sidebar.astro">sd/components/starlight/Sidebar.astro</a>
+    <ul>
+      <li><a href="https://github.com/withastro/starlight/blob/main/packages/starlight/components/SidebarPersister.astro">starlight/components/SidebarPersister.astro</a>
+        <ul>
+          <li><a href="https://github.com/withastro/docs/blob/main/src/components/tabs/TabbedContent.astro">sd/components/tabs/TabbedContent.astro</a>
+            <ul>
+              <li><em>(topics only)</em> <a href="https://github.com/withastro/docs/blob/main/src/components/tabs/TabListItem.astro">sd/components/tabs/TabListItem.astro</a>
+                <ul>
+                  <li><a href="https://github.com/withastro/starlight/blob/main/packages/starlight/user-components/Icon.astro">starlight/user-components/Icon.astro</a></li>
+                </ul>
+              </li>
+              <li><em>(regular sidebar)</em> <a href="https://github.com/withastro/docs/blob/main/src/components/tabs/TabPanel.astro">sd/components/tabs/TabPanel.astro</a>
+                <ul>
+                  <li><em>(actual regular sidebar listing)</em> <a href="https://github.com/withastro/starlight/blob/main/packages/starlight/components/SidebarSublist.astro">starlight/components/SidebarSublist.astro</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p>Many components pass slots and fragments down to children, which may overwrite default behavior.</p>
+</blockquote>
+
+<hr />
+
+<h3 id="markup-structure-sst-vs-astro-docs">Markup Structure (SST vs Astro Docs)</h3>
+
+<p><strong>Hideoo/starlight-sidebar-topics</strong> markup (our site):</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="p">=</span><span class="s">"starlight-sidebar-topics"</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="p">=</span><span class="s">"starlight-sidebar-topics-icon"</span><span class="p">&gt;&lt;</span><span class="nc">Icon</span> <span class="p">/&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="si">{</span><span class="nx">label</span><span class="si">}</span> <span class="p">&lt;</span><span class="nc">Badge</span> <span class="na">class</span><span class="p">=</span><span class="s">"starlight-sidebar-topics-badge"</span> <span class="p">/&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="p">=</span><span class="s">"starlight-sidebar-topics-current"</span><span class="p">&gt;&lt;</span><span class="err">!--</span> <span class="err">...</span> <span class="err">--</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+ <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+ <span class="p">&lt;</span><span class="err">!--</span> <span class="na">regular</span> <span class="na">starlight</span><span class="err">/</span><span class="na">sidebar</span> <span class="err">(</span><span class="na">starlight</span><span class="err">/</span><span class="na">SidebarSublist</span><span class="err">)</span> <span class="na">with</span> <span class="na">inline</span> <span class="na">styles</span> <span class="err">...</span> <span class="err">--</span><span class="p">&gt;</span>
+</code></pre></div></div>
+
+<p><strong>Astro Docs</strong> markup:</p>
+
+<div class="language-jsx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">&lt;</span><span class="nt">tabbed</span><span class="err">-</span><span class="na">content</span> <span class="na">class</span><span class="p">=</span><span class="s">"tabbed-sidebar"</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="p">=</span><span class="s">"tab-list"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nc">TabListItem</span> <span class="na">class</span><span class="p">=</span><span class="s">"tab-item"</span><span class="p">&gt;&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="p">=</span><span class="s">"tab-link"</span><span class="p">&gt;&lt;</span><span class="nc">Icon</span> <span class="na">class</span><span class="p">=</span><span class="s">"icon"</span> <span class="p">/&gt;</span> <span class="si">{</span><span class="nx">label</span><span class="si">}</span><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;&lt;/</span><span class="nc">TabListItem</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nc">TabListItem</span> <span class="na">class</span><span class="p">=</span><span class="s">"tab-item"</span><span class="p">&gt;&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">class</span><span class="p">=</span><span class="s">"tab-link"</span> <span class="na">aria-selected</span><span class="p">=</span><span class="s">"true"</span><span class="p">&gt;&lt;</span><span class="err">!--</span> <span class="err">...</span> <span class="err">--</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;&lt;/</span><span class="nc">TabListItem</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="p">=</span><span class="s">"panels"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="err">!--</span> <span class="na">regular</span> <span class="na">starlight</span><span class="err">/</span><span class="na">SidebarSublist</span> <span class="na">with</span> <span class="na">inline</span> <span class="na">styles</span> <span class="err">...</span> <span class="err">--</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">tabbed</span><span class="err">-</span><span class="na">content</span><span class="p">&gt;</span>
+</code></pre></div></div>
+
+<p>Notice: SST has <code class="language-plaintext highlighter-rouge">ul.starlight-sidebar-topics</code> controlling topics, while Astro Docs has <code class="language-plaintext highlighter-rouge">.tabbed-sidebar</code> + <code class="language-plaintext highlighter-rouge">ul.tab-list</code>. We’ll need to merge these styles carefully.</p>
+
+<hr />
+
+<h3 id="mapping-strategy">Mapping Strategy</h3>
+
+<p><strong>Goals:</strong></p>
+<ul>
+  <li>Pull styles from upstream sources easily</li>
+  <li>Minimize changes, keep them explicit</li>
+</ul>
+
+<p><strong>Approach:</strong></p>
+<ul>
+  <li>
+    <ol>
+      <li>Reset HiDeoo/starlight-sidebar-topics</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>Apply Astro Docs styles</li>
+    </ol>
+  </li>
+  <li>
+    <ol>
+      <li>Adapt for Starlight styles and starlight-sidebar-topics markup</li>
+    </ol>
+  </li>
+</ul>
+
+<blockquote>
+  <p>[!TIP]
+If you use <strong>Method B — Theming with Component Overrides</strong> you can skip Step 1, since the styles are already removed in overriden components.</p>
+</blockquote>
+
+<p>By following this approach, you can trace upstream styles to their original markup and translate them to your own selectors. Copy-paste where possible, merge manually only when necessary.</p>
+
+<p>Good luck! 🎯</p>
+
+<p>From here, the rest is up to you: explore upstream styles, map them carefully, and update your selectors as needed. With this approach, you’ll be able to safely keep your topics sidebar in sync with the latest Astro Docs theme while maintaining your customizations.</p>
+
+<hr />
+
+<p><strong>📚 Inspiration and Sources</strong></p>
+<ul>
+  <li><a href="https://starlight.astro.build/guides/css-and-tailwind/#custom-css-styles">Astro Docs — Custom CSS styles</a></li>
+  <li><a href="https://github.com/withastro/docs">Astro Docs repo</a>
+    <ul>
+      <li><a href="https://github.com/withastro/docs/blob/main/src/components/starlight/Sidebar.astro">Sidebar.astro</a></li>
+      <li><a href="https://github.com/withastro/docs/blob/main/src/components/tabs/TabbedContent.astro">TabbedContent.astro</a></li>
+      <li><a href="https://github.com/withastro/docs/blob/main/src/components/tabs/TabListItem.astro">TabListItem.astro</a></li>
+    </ul>
+  </li>
+  <li><a href="https://starlight-sidebar-topics.netlify.app/docs/guides/custom-topic-list/">starlight-sidebar-topics — Create a custom topic list</a></li>
+  <li><a href="https://github.com/HiDeoo/starlight-sidebar-topics">starlight-sidebar-topics repo</a>
+    <ul>
+      <li><a href="https://github.com/HiDeoo/starlight-sidebar-topics/blob/main/packages/starlight-sidebar-topics/overrides/Sidebar.astro">Sidebar</a></li>
+      <li><a href="https://github.com/HiDeoo/starlight-sidebar-topics/blob/main/packages/starlight-sidebar-topics/components/starlight/Sidebar.astro">StarlightSidebarTopicsSidebar</a></li>
+      <li><a href="https://github.com/HiDeoo/starlight-sidebar-topics/blob/main/packages/starlight-sidebar-topics/components/Topics.astro">Topic</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>✨ <em>AI was used to help draft language, formatting, and code — plus we just love em dashes.</em></p>
+
+<p align="center">
+  <sub>😐 <a href="https://github.com/apathetic-tools">Apathetic Tools</a> © 
+  Guide <a href="../../../LICENSE-CONTENT">CC&nbsp;BY-NC</a> · 
+  Code <a href="../../../LICENSE">MIT</a></sub>
+</p>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p><a href="https://github.com/HiDeoo/starlight-sidebar-topics/issues/24#issuecomment-2720839854">issue #24: theming using custom CSS</a> <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p><a href="https://github.com/HiDeoo/starlight-sidebar-topics/issues/38#issuecomment-3303567297">issue #38: theming using custom components</a> <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Apathetic Recipes</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Apathetic Tools</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Notes and snippets from our elsewhere learnings.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>DECISIONS.md Style | Apathetic Recipes</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="DECISIONS.md Style" />
+<meta name="author" content="Apathetic Tools" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Notes and snippets from our elsewhere learnings." />
+<meta property="og:description" content="Notes and snippets from our elsewhere learnings." />
+<link rel="canonical" href="https://apathetic-recipes.github.io/decisions-md/v1.html" />
+<meta property="og:url" content="https://apathetic-recipes.github.io/decisions-md/v1.html" />
+<meta property="og:site_name" content="Apathetic Recipes" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="DECISIONS.md Style" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Apathetic Tools"},"description":"Notes and snippets from our elsewhere learnings.","headline":"DECISIONS.md Style","url":"https://apathetic-recipes.github.io/decisions-md/v1.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://apathetic-recipes.github.io/feed.xml" title="Apathetic Recipes" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Apathetic Recipes</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/decisions-md/v1.html">DECISIONS.md Style</a><a class="page-link" href="/docs/astro-starlight/icons-by-category/assets/partials/pageFooter.partial.html">How to use built-in Icons</a><a class="page-link" href="/docs/astro-starlight/icons-by-category/assets/partials/pageHeader.partial.html">Starlight Icons by Category ✨</a><a class="page-link" href="/decisions-md/">DECISIONS.md Style</a><a class="page-link" href="/docs/">Apathetic Tools Snippet Documentation</a><a class="page-link" href="/docs/astro-starlight/">Starlight Snippets</a><a class="page-link" href="/docs/astro-starlight/icons-by-category/">Starlight Icons by Category ✨</a><a class="page-link" href="/docs/astro-starlight/sidebar-toggles/">Sidebar Toggles</a><a class="page-link" href="/docs/astro-starlight/theme-selector-firefox-windows-fix/">Theme Selector fix for Firefox on Windows</a><a class="page-link" href="/docs/astro-starlight/topics-astro-docs-theme/">Theming Starlight Sidebar Topics as Astro Docs</a><a class="page-link" href="/docs/astro/">Astro Snippets</a><a class="page-link" href="/docs/git/">Git Snippets</a><a class="page-link" href="/docs/git/per-repository-user/">Git – Per Repository User</a><a class="page-link" href="/docs/github/">Github Snippets</a><a class="page-link" href="/docs/github/github-pages-deploy/">Github Pages Deploy</a><a class="page-link" href="/docs/javascript/">Javascript Snippets</a><a class="page-link" href="/docs/javascript/config-pattern/">Config Pattern for Astro</a><a class="page-link" href="/docs/text/">Text Snippets</a><a class="page-link" href="/docs/text/utf8-emoji-icons-by-category/">UTF-8 Emoji Icons by Category</a><a class="page-link" href="/docs/windows/">Windows Snippets</a><a class="page-link" href="/docs/windows/development-setup/">Windows Development Setup</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">DECISIONS.md Style</h1>
+  </header>
+
+  <div class="post-content">
+    <h1 id="decisionsmd-style">DECISIONS.md Style</h1>
+<p><em>A lightweight convention for documenting engineering choices</em></p>
+
+<p>This style is project-agnostic — you can copy this file verbatim into any repository to establish a consistent decision-recording convention. See the <a href="https://apathetic-recipes.github.io/decisions-md">Apathetic Decisions.md Style</a> for more details.</p>
+
+<hr />
+
+<h2 id="purpose">Purpose</h2>
+
+<p>Every project grows through choices — frameworks, formats, trade-offs, or philosophy.<br />
+A <strong>DECISIONS.md</strong> file records those choices and their reasoning so future contributors can understand <em>why</em> things are the way they are.</p>
+
+<p>This guide defines a reusable, human-friendly style for writing those decision records.</p>
+
+<hr />
+
+<h2 id="guiding-principles">Guiding Principles</h2>
+
+<ul>
+  <li><strong>Readable first.</strong> Decisions are for humans, not auditors.</li>
+  <li><strong>Atomic.</strong> One decision per section.</li>
+  <li><strong>Dated.</strong> Each record marks the start of a period when that decision applies.</li>
+  <li><strong>Rationale-focused.</strong> The “why” matters more than the “what.”</li>
+  <li><strong>Revisable.</strong> You can update outcomes without rewriting history.</li>
+  <li><strong>Lightweight.</strong> No huge templates, no bureaucracy — just clarity.</li>
+</ul>
+
+<hr />
+
+<h2 id="file-structure">File Structure</h2>
+
+<p>A <code class="language-plaintext highlighter-rouge">DECISIONS.md</code> lives at the root of your project and lists all decisions in <strong>reverse chronological order</strong> — most recent at the top.</p>
+
+<p>Each decision is formatted like this:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gu">## Use AI Assistance for Documentation and Development</span>
+<span class="ge">*DEC 01 — 2025-10-13*</span>
+<span class="nt">&lt;a</span> <span class="na">id=</span><span class="s">"dec01"</span><span class="nt">&gt;&lt;/a&gt;</span>
+
+<span class="gs">**Supersedes:**</span> <span class="p">[</span><span class="nv">DEC 00</span><span class="p">](</span><span class="sx">#dec00</span><span class="p">)</span>  <span class="p">(</span><span class="sx">omit</span> if blank)
+<span class="gs">**Refined by:**</span> <span class="p">[</span><span class="nv">DEC 02</span><span class="p">](</span><span class="sx">#dec02</span><span class="p">)</span>  <span class="p">(</span><span class="sx">omit</span> if blank)
+
+<span class="gu">### Context</span>
+Explain the situation or limitation that led to the decision.
+
+<span class="gu">### Options Considered</span>
+Summarize the major options (pros/cons if useful).
+
+<span class="gu">### Decision</span>
+State what was chosen and briefly why.
+
+<span class="gu">### Implications (optional)</span>
+Include a Implications block only when the decision produces notable side effects, trade-offs, or planned follow-up actions not covered in the decision summary.
+
+<span class="gu">### Follow-up and Evolution (optional)</span>
+Used later to note how the decision worked in practice.
+</code></pre></div></div>
+
+<p>Projects may include <code class="language-plaintext highlighter-rouge">_Written following the [DECISIONS.md Style Guide](./DECISIONS_STYLE_GUIDE.md)._</code> at the bottom of their DECISIONS.md to indicate adherence.</p>
+
+<hr />
+
+<h2 id="formatting-rules">Formatting Rules</h2>
+
+<h3 id="headings">Headings</h3>
+<p>Use a <strong>clear, descriptive title</strong> as the section header (what was decided).<br />
+The DEC number and date appear <strong>below</strong> the title in italics for legibility.</p>
+
+<p>Example:</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gu">## Switch to TypeScript Build Pipeline</span>
+<span class="ge">*DEC 03 — 2025-07-12*</span>
+<span class="nt">&lt;a</span> <span class="na">id=</span><span class="s">"dec03"</span><span class="nt">&gt;&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<p>This ensures:</p>
+<ul>
+  <li>GitHub’s TOC lists readable titles (“Switch to TypeScript…”).</li>
+  <li>Readers can still <code class="language-plaintext highlighter-rouge">Ctrl+F</code> for “DEC 03”.</li>
+  <li>Each decision has a stable link target (<code class="language-plaintext highlighter-rouge">#dec03</code>).</li>
+</ul>
+
+<h3 id="numbering">Numbering</h3>
+<p>Prefix decisions sequentially: <code class="language-plaintext highlighter-rouge">DEC 01</code>, <code class="language-plaintext highlighter-rouge">DEC 02</code>, <code class="language-plaintext highlighter-rouge">DEC 03</code>, …<br />
+Two digits are enough for most projects.<br />
+If you expect hundreds, use three (<code class="language-plaintext highlighter-rouge">DEC 001</code>).</p>
+
+<h3 id="anchors">Anchors</h3>
+<p>Include an explicit anchor <code class="language-plaintext highlighter-rouge">&lt;a id="dec01"&gt;&lt;/a&gt;</code> directly below the metadata.<br />
+This keeps links stable even if the title changes.</p>
+
+<h3 id="reverse-order">Reverse Order</h3>
+<p>List newest first — readers see the current worldview immediately.</p>
+
+<h3 id="superseding-or-refining">Superseding or Refining</h3>
+<p>When a decision replaces or expands on an earlier one, link both ways:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gs">**Supersedes:**</span> <span class="p">[</span><span class="nv">DEC 04</span><span class="p">](</span><span class="sx">#dec04</span><span class="p">)</span>
+<span class="gs">**Refined by:**</span> <span class="p">[</span><span class="nv">DEC 06</span><span class="p">](</span><span class="sx">#dec06</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This creates a readable decision graph without repetition.</p>
+
+<h3 id="follow-up-and-evolution">Follow-up and Evolution</h3>
+<p>Optional section for when a decision led to new insight or a revised implementation. Use it to later record what changed, not to rewrite the past.</p>
+
+<p>If you later revisit a decision, add a short dated follow-up note:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gu">### Follow-up and Evolution (2025-11-02)</span>
+After testing, the tool failed under Python 3.12. Replaced by Compyner.
+</code></pre></div></div>
+
+<p>Do not rewrite (except the title) or delete the original decision.<br />
+Only add outcomes when experience or results provide hindsight.</p>
+
+<p>A decision is not final until a release is made. That means you can log a decision, attempt to implement it, and keep revising the decision as you implement it. Once shipped, treat that decision as frozen until revisited. It’s okay to go back and add Outcomes.</p>
+
+<hr />
+
+<h2 id="when-to-create-a-new-decision">When to Create a New Decision</h2>
+
+<p>Create a new DEC when:</p>
+
+<ul>
+  <li>The project’s <strong>direction</strong> or <strong>policy</strong> changes (not just code).</li>
+  <li>A previous decision is <strong>formally reversed or superseded</strong> after a release.</li>
+  <li>You introduce a <strong>new architectural pattern</strong> or dependency philosophy.</li>
+</ul>
+
+<p>Do <strong>not</strong> create new entries for day-to-day tweaks or experiments.<br />
+Those belong in commits or pull requests.</p>
+
+<hr />
+
+<h2 id="toc-and-navigation">TOC and Navigation</h2>
+
+<p>GitHub and most renderers automatically generate a <strong>Table of Contents</strong>.<br />
+Do not maintain one manually.</p>
+
+<p>Readers can:</p>
+<ul>
+  <li>Use the sidebar/dropdown TOC for titles.</li>
+  <li>Search <code class="language-plaintext highlighter-rouge">DEC 03</code> for quick jumps.</li>
+  <li>Follow <code class="language-plaintext highlighter-rouge">[DEC 03](#dec03)</code> links between sections.</li>
+</ul>
+
+<hr />
+
+<h2 id="voice-and-tone">Voice and Tone</h2>
+
+<p>Write decisions <strong>like a conversation with your future self.</strong></p>
+
+<ul>
+  <li>Plain language beats corporate jargon.</li>
+  <li>Explain reasoning, not just results.</li>
+  <li>Document uncertainty — it helps the next person.</li>
+  <li>Humor is allowed if it clarifies intent.</li>
+</ul>
+
+<p>Example:</p>
+<blockquote>
+  <p>We tried to hand-roll a bundler. It worked until it didn’t.<br />
+<code class="language-plaintext highlighter-rouge">pinliner</code> is smarter, smaller, and less likely to cry under Python 3.12.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="example-minimal-entry">Example Minimal Entry</h2>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gu">## Adopt Ruff for Linting</span>
+<span class="ge">*DEC 02 — 2025-10-12*</span>
+<span class="nt">&lt;a</span> <span class="na">id=</span><span class="s">"dec02"</span><span class="nt">&gt;&lt;/a&gt;</span>
+
+<span class="gu">### Context</span>
+We needed a fast, unified tool for formatting and linting.
+
+<span class="gu">### Options Considered</span>
+<span class="p">-</span> <span class="gs">**Flake8 + Black**</span> — mature, stable, but two configs.
+<span class="p">-</span> <span class="gs">**Ruff**</span> — one tool, faster, supports both.
+
+<span class="gu">### Decision</span>
+Adopt <span class="sb">`ruff`</span> as both linter and formatter.
+
+<span class="gu">### Implications</span>
+Simpler setup; less flexibility for custom plugins.
+
+<span class="gu">### Outcome (2026-01-10)</span>
+Ruff replaced <span class="sb">`isort`</span> too — fewer moving parts.
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="summary-philosophy">Summary Philosophy</h2>
+
+<blockquote>
+  <p><strong>Decisions are part of the codebase.</strong><br />
+They deserve version control, clarity, and empathy.</p>
+</blockquote>
+
+<p>Your <code class="language-plaintext highlighter-rouge">DECISIONS.md</code> is not a bureaucratic artifact — it’s the memory of how your team learned.<br />
+Keep it tidy, readable, and honest.</p>
+
+<hr />
+
+<p><em>Format inspired by <a href="https://apathetic-recipes.github.io/decisions-md">Apathetic Decisions Style v1</a> and <a href="https://adr.github.io/">ADR</a>, optimized for small, evolving projects.</em></p>
+
+  </div>
+
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Apathetic Recipes</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Apathetic Tools</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Notes and snippets from our elsewhere learnings.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
